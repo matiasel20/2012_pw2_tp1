@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 14-05-2012 a las 23:27:45
+-- Tiempo de generación: 15-05-2012 a las 00:38:35
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -27,22 +27,16 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `alquiler` (
-  `idAlquiler` int(11) NOT NULL AUTO_INCREMENT,
+  `idalquiler` int(11) NOT NULL AUTO_INCREMENT,
   `cancha` int(1) unsigned DEFAULT NULL,
   `fecha` timestamp NULL DEFAULT NULL,
   `indumentaria` tinyint(1) DEFAULT NULL,
   `duchas` tinyint(1) DEFAULT NULL,
   `confiteria` tinyint(1) DEFAULT NULL,
-  `Cliente_idcliente` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`idAlquiler`,`Cliente_idcliente`),
-  KEY `fk_Alquiler_Cliente1` (`Cliente_idcliente`)
+  `cliente_idcliente` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`idalquiler`,`cliente_idcliente`),
+  KEY `fk_Alquiler_Cliente1` (`cliente_idcliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- RELACIONES PARA LA TABLA `alquiler`:
---   `Cliente_idcliente`
---       `cliente` -> `idcliente`
---
 
 -- --------------------------------------------------------
 
@@ -73,22 +67,14 @@ CREATE TABLE IF NOT EXISTS `cliente` (
 --
 
 CREATE TABLE IF NOT EXISTS `compra` (
-  `idclienteCompra` int(10) unsigned NOT NULL,
+  `idclientecompra` int(10) unsigned NOT NULL,
   `cantidad` int(10) unsigned NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `Producto_idProducto1` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`idclienteCompra`),
-  KEY `fk_Producto_copy1_has_Cliente_copy1_Cliente_copy11` (`idclienteCompra`),
-  KEY `fk_Compra_Producto1` (`Producto_idProducto1`)
+  `producto_idproducto1` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`idclientecompra`),
+  KEY `fk_Producto_copy1_has_Cliente_copy1_Cliente_copy11` (`idclientecompra`),
+  KEY `fk_Compra_Producto1` (`producto_idproducto1`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- RELACIONES PARA LA TABLA `compra`:
---   `Producto_idProducto1`
---       `producto` -> `idProducto`
---   `idclienteCompra`
---       `cliente` -> `idcliente`
---
 
 -- --------------------------------------------------------
 
@@ -135,12 +121,12 @@ CREATE TABLE IF NOT EXISTS `producto` (
 --
 
 CREATE TABLE IF NOT EXISTS `torneo` (
-  `idTorneo` int(11) NOT NULL AUTO_INCREMENT,
+  `idtorneo` int(11) NOT NULL AUTO_INCREMENT,
   `temporada` timestamp NULL DEFAULT NULL,
   `torneo` varchar(45) DEFAULT NULL,
   `campeon` varchar(45) NOT NULL,
   `subcampeon` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idTorneo`)
+  PRIMARY KEY (`idtorneo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
