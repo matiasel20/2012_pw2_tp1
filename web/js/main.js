@@ -1,1 +1,0 @@
-//código javascript del proyecto
