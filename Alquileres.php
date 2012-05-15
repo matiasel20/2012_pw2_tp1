@@ -16,8 +16,8 @@
 
 	<meta name="generator" content="Geany 0.18" />
 
-	<link rel="stylesheet" href="EstiloIndex.css" type="text/css"/>
-	<link rel="stylesheet" href="EstiloAlquiler.css" type="text/css"/>
+	<link rel="stylesheet" href="css/EstiloIndex.css" type="text/css"/>
+	<link rel="stylesheet" href="css/EstiloAlquiler.css" type="text/css"/>
 	<link rel="stylesheet" href="javascript\css\ui-lightness\jquery-ui-1.8.16.custom.css" type="text/css"/>
 	<script type="text/javascript" src="javascript\jquery.min.js"></script>
 	<script type="text/javascript" src="javascript\mi_jquery.validate.js"></script>
@@ -59,7 +59,7 @@
 		<div class="logo">
 				<div class="pelota">
 			
-			<img class="pelota" src="photo.gif" alt="Click to see enlarged image"/>
+			<img class="pelota" src="img/photo.gif" alt="Click to see enlarged image"/>
 
 		</div>
 		<div class="titulo"><h1>La Canchita de Rawson</h1></div>
@@ -357,15 +357,15 @@
 		
 		<div class="contenido3">
 			<a href="http://msn.foxsports.com/fse/argentina" >
-			<img class="propaganda" src="propaganda1.jpg" alt="Click to see enlarged image"/>
+			<img class="propaganda" src="img/propaganda1.jpg" alt="Click to see enlarged image"/>
 			</a>
 			
 			<a href="http://www.tycsports.com/contenidos/home.html" >
-			<img class="propaganda" src="propaganda2.jpg" alt="Click to see enlarged image"/>
+			<img class="propaganda" src="img/propaganda2.jpg" alt="Click to see enlarged image"/>
 			</a>
 			
 			<a href="http://www.ole.com.ar/" >
-			<img class="propaganda" src="propaganda3.jpg" alt="Click to see enlarged image"/>
+			<img class="propaganda" src="img/propaganda3.jpg" alt="Click to see enlarged image"/>
 			</a>
 
 			<br/>
