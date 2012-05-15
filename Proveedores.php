@@ -5,6 +5,8 @@
 
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <?php session_start();?>
+
 
 
 
@@ -70,7 +72,10 @@
 		</div>
     </div>
 		
-   <div class="right">
+   <div class="right">       
+       <?php if (isset($_SESSION['usuario'])):?>
+                <label sytle="text-align: right"><?php echo $_SESSION['usuario']?> <a href="funciones/logout.php" >cerrar sesion</a><label>
+                <?php endif?>      
     
 		<div class="contenido0" style="text-align: right">
 			<FORM action="http://www.google.com/search" method="get" >
