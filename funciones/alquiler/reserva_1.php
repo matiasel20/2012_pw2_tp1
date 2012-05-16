@@ -26,6 +26,9 @@ $pdo=conectar();
         $hora = $turno[1];
         $fecha=sprintf("%s %s:00",$_REQUEST['fecha'],$hora);
     }
+    else {
+        header("location:../../alquileres.php");        
+    }
     
     
     
