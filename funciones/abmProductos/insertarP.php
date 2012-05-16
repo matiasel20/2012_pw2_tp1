@@ -1,5 +1,5 @@
 <?php
-include("../funciones/abmProductos/conectar.php");
+include("../conectar.php");
 extract($_POST);
 //session_start();
 $pdo=conectar();
@@ -24,7 +24,7 @@ $pdo=conectar();
      
   $pdo->commit();  //se guardaría todo “definitivamente”
 
-     header('Location: formularioABMP.php');
+     header('Location: ../../administracion.php');
 } catch (PDOException $e) {
   $pdo->rollBack();  //ante cualquier excepción, revierte todo
    echo 'La operación ha fallado: ' . $e->getMessage();

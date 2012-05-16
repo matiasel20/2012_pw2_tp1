@@ -1,6 +1,6 @@
 <?php
 
-include("funciones/conectar.php");
+include("../conectar.php");
 extract($_POST);
 session_start();
 
@@ -36,6 +36,6 @@ $pdo=conectar();
   $pdo->rollBack();  //ante cualquier excepción, revierte todo
    echo 'La operación ha fallado: ' . $e->getMessage();
 }
-header('Location: formularioABMP.php');
+header('Location: ../../administracion.php');
 ?>
 

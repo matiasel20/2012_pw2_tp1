@@ -44,7 +44,7 @@ include("funciones/abmProductos/mostrarTablaP.php")
   <td valign="top">     
    
       <font size="5"><u>Eliminar</u></font>
-        <form action="borraP.php" method="post">
+        <form action="funciones/abmProductos/borraP.php" method="post">
             ID<br>
             <input type="text" name="id"><br>
             
@@ -55,7 +55,7 @@ include("funciones/abmProductos/mostrarTablaP.php")
   <tr>
       <td valign="top">
     <font size="5"><u>Modificar</u></font> 
-        <form action="modificaP.php" method="post">
+        <form action="funciones/abmProductos/modificaP.php" method="post">
             ID<br>
             <input type="text" name="id"><br>
             

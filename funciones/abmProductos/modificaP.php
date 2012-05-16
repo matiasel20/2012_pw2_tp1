@@ -1,6 +1,6 @@
 <?php
 
-include("funciones/conectar.php");
+include("../conectar.php");
 extract($_POST);
 session_start();
 $_SESSION['identifikador']=$id;
