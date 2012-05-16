@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 14-05-2012 a las 22:20:23
+-- Tiempo de generación: 16-05-2012 a las 10:52:22
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -28,33 +28,28 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `alquiler` (
   `idAlquiler` int(11) NOT NULL AUTO_INCREMENT,
-  `cancha` int(1) unsigned DEFAULT NULL,
-  `fecha` timestamp NULL DEFAULT NULL,
-  `indumentaria` tinyint(1) DEFAULT NULL,
-  `duchas` tinyint(1) DEFAULT NULL,
-  `confiteria` tinyint(1) DEFAULT NULL,
+  `cancha` int(1) unsigned NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `indumentaria` tinyint(1) NOT NULL DEFAULT '0',
+  `duchas` tinyint(1) NOT NULL DEFAULT '0',
+  `confiteria` tinyint(1) NOT NULL DEFAULT '0',
   `Cliente_idcliente` int(10) unsigned NOT NULL,
   PRIMARY KEY (`idAlquiler`,`Cliente_idcliente`),
+  UNIQUE KEY `turno` (`fecha`,`cancha`),
   KEY `fk_Alquiler_Cliente1` (`Cliente_idcliente`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Volcado de datos para la tabla `alquiler`
 --
 
 INSERT INTO `alquiler` (`idAlquiler`, `cancha`, `fecha`, `indumentaria`, `duchas`, `confiteria`, `Cliente_idcliente`) VALUES
-(9, 1, '2012-05-14 21:51:01', 1, 1, 1, 7),
-(10, 1, '2012-05-14 21:55:41', 1, 1, 1, 7),
-(16, 1, '2012-05-14 23:00:00', 0, 0, 0, 7),
-(18, 1, '2012-05-15 11:00:00', 0, 0, 0, 7),
-(23, 1, '2012-05-15 12:00:00', 0, 0, 0, 7),
-(24, 1, '2012-05-15 13:00:00', 0, 0, 0, 7),
-(25, 1, '2012-05-15 14:00:00', 0, 0, 0, 9),
-(26, 1, '2012-05-16 11:00:00', 0, 0, 0, 7),
-(27, 1, '2012-05-15 15:00:00', 0, 0, 0, 7),
-(28, 3, '2012-05-18 22:00:00', 0, 0, 0, 9),
-(29, 1, '2012-05-18 21:00:00', 0, 0, 0, 10),
-(30, 2, '2012-05-16 22:00:00', 1, 1, 1, 10);
+(2, 1, '2012-05-16 14:00:00', 0, 0, 0, 7),
+(3, 1, '2012-05-16 15:00:00', 0, 0, 0, 7),
+(6, 1, '2012-05-16 16:00:00', 0, 0, 0, 7),
+(7, 1, '2012-05-16 17:00:00', 0, 0, 0, 7),
+(8, 1, '2012-05-16 18:00:00', 0, 0, 0, 7),
+(9, 1, '2012-05-16 19:00:00', 0, 0, 0, 7);
 
 -- --------------------------------------------------------
 
@@ -76,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `password` varchar(45) NOT NULL,
   PRIMARY KEY (`idcliente`),
   UNIQUE KEY `user_UNIQUE` (`user`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='\n	\n					' AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='\n	\n					' AUTO_INCREMENT=12 ;
 
 --
 -- Volcado de datos para la tabla `cliente`
@@ -85,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `cliente` (
 INSERT INTO `cliente` (`idcliente`, `user`, `nombre`, `apellido`, `dni`, `fechanac`, `direccion`, `localidad`, `telcel`, `email`, `password`) VALUES
 (7, 'mach', 'sebastian', 'machado', '333', '0000-00-00', 'san martin', 'rw', '555', 'seba@hotmail.com', '123'),
 (9, 'yen', 'nani', 'gensana', '3333', '0000-00-00', 'pepe', 'ahh ', '333', 'matias@hotmail.com', '123'),
-(10, 'xxx', 'nada', 'nadin', '999', '2012-12-12', 'ap bel', 'trelew', '3333333333333', 'ss@hotmail.com', '123');
+(10, 'xxx', 'nada', 'nadin', '9996', '2012-12-12', 'ap bel', 'trelew ', '3333333333333', 'ss@hotmail.com', '123');
 
 -- --------------------------------------------------------
 
@@ -139,14 +134,17 @@ CREATE TABLE IF NOT EXISTS `producto` (
   `precio` decimal(5,2) unsigned NOT NULL,
   `stock` int(45) NOT NULL,
   PRIMARY KEY (`idproducto`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Volcado de datos para la tabla `producto`
 --
 
 INSERT INTO `producto` (`idproducto`, `codigo`, `descripcion`, `modelo`, `tamanio`, `precio`, `stock`) VALUES
-(1, 1777999, 'pelota', 'rppp', '5', 2.00, 6);
+(2, 0, 'pepe', 'dd', 'd', 0.00, 0),
+(3, 99, 'pp', '8', '2', 4.00, 1),
+(4, 99, 'pp', '8', '2', 4.00, 1),
+(5, 99, 'pp', '8', '2', 4.00, 1);
 
 -- --------------------------------------------------------
 

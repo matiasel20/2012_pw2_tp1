@@ -23,7 +23,7 @@ include("consultauser.php");
     /*$mes = date('n');
     $dia = date('N');
     $anio = date('Y');*/
-    $iduser=1;
+    
     if (isset($_SESSION['usuario'])){
         $iduser=consultaUser($pdo,$_SESSION['usuario']);
     }
@@ -33,11 +33,14 @@ include("consultauser.php");
     
     var_dump($turno);
     
-    $cancha = $turno[0];
-    $hora = $turno[1];
+    if (($turno[1]>=8 and $turno[1]<=20) and ($turno[0]>=1 and $turno[0]<=3)){
+        $cancha = $turno[0];
+        $hora = $turno[1];
+        $fecha=sprintf("%s %s:00",$_REQUEST['fecha'],$hora);
+    }
     
     
-    $fecha=sprintf("%s %s:00",$_REQUEST['fecha'],$hora);
+    
     
     
     
