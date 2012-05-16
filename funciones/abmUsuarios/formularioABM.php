@@ -15,7 +15,7 @@ include("funciones/abmUsuarios/mostrarTabla.php")
 <tr>
 <td valign="top">
     <h1 style="font-size: 10">inserta</h1>
-        <form action="insertar.php" method="post">
+        <form action="funciones/abmUsuarios/insertar.php" method="post">
             user<br>
             <input type="text" name="user" ><br>
             nombre<br>
@@ -45,7 +45,7 @@ include("funciones/abmUsuarios/mostrarTabla.php")
         </td>
 <td valign="top">     
 		<h1>borra</h1>
-        <form action="borra.php" method="post">
+        <form action="funciones/abmUsuarios/borra.php" method="post">
             ID<br>
             <input type="text" name="id"><br>
             
@@ -56,7 +56,7 @@ include("funciones/abmUsuarios/mostrarTabla.php")
 </td>
 <td valign="top">
 		<h1>modifica</h1>
-        <form action="modifica.php" method="post">
+        <form action="funciones/abmUsuarios/modifica.php" method="post">
             ID<br>
             <input type="text" name="id"><br>
             
