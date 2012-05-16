@@ -1,5 +1,5 @@
 <?php
-include("funciones/conectar.php");
+include("../funciones/abmProductos/conectar.php");
 extract($_POST);
 //session_start();
 $pdo=conectar();

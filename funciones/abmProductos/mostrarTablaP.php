@@ -16,7 +16,9 @@ $pdo=conectar();
    
      
   $pdo->commit();  //se guardaría todo “definitivamente”
-  echo "<h1>tabla de usuarios!</h1>";
+  ?>
+<p style="font-size:20px ; font-family: italic; color: white">Tabla de Productos!</p>
+  <?php
   //echo $nombre.$apellido.$password;
 } catch (PDOException $e) {
   $pdo->rollBack();  //ante cualquier excepción, revierte todo

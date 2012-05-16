@@ -14,7 +14,7 @@ include("funciones/abmUsuarios/mostrarTabla.php")
 <table border="1">
 <tr>
 <td valign="top">
-<h1>inserta</h1>
+    <h1 style="font-size: 10">inserta</h1>
         <form action="insertar.php" method="post">
             user<br>
             <input type="text" name="user" ><br>
