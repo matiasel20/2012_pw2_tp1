@@ -3,21 +3,9 @@
 session_start();
 
 include("consultauser.php");
+require_once ("conectar.php");
 
-
-    try {
-
-        $pdo = new PDO ('mysql:host=localhost;dbname=canchitarw', 'root','');
-
-        $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, true);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $pdo->exec("SET NAMES UTF8");//para evitar problemas con los acentos 
-        
-        
-
-     } catch (PDOException $e) {
-       echo 'Error de conexión a la BD: '.$e->getMessage();
-     }
+$pdo=conectar();
 
     
     /*$mes = date('n');

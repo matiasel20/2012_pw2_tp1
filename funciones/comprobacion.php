@@ -1,6 +1,8 @@
 <?php
 
-include("funciones.php");
+require_once ("conectar.php");
+include("consultalogin.php");
+
 
 session_start();
 $pdo=conectar();
