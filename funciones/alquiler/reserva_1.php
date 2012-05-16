@@ -3,7 +3,7 @@
 session_start();
 
 include("consultauser.php");
-require_once ("conectar.php");
+require_once ("../conectar.php");
 
 $pdo=conectar();
 
@@ -86,7 +86,7 @@ $pdo=conectar();
                $_SESSION['errorAlq']=true;
     }  
     
-header("location:../alquileres.php");
+header("location:../../alquileres.php");
     
 
 

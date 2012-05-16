@@ -78,7 +78,7 @@
         else {
         ?>
 		<div class="contenido1" style="text-align: left">
-			<form id="formulario" method="post" action="funciones/comprobacion.php">
+			<form id="formulario" method="post" action="funciones/login/comprobacion.php">
 				<h2>Ingreso</h2><br/>
 				<label>Usuario</label><br/>
 				<input type="text" name="usuario" id="usuario" class="required" /><br/>

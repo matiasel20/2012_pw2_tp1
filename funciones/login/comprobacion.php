@@ -1,6 +1,6 @@
 <?php
 
-require_once ("conectar.php");
+require_once ("../conectar.php");
 include("consultalogin.php");
 
 
@@ -19,6 +19,6 @@ if ($_POST['usuario'] !="" AND $_POST['pass'] !=""){
 else {
     $_SESSION['reingrese']="ingrese los datos";
 }
-header("location:../index.php");
+header("location:../../index.php");
 
 ?>

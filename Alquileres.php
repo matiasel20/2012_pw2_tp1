@@ -82,10 +82,15 @@
     </div>
 	
 	<div class="center">
-            
+         
+         <?php ?>
          <?php
          
             session_start();
+            
+            if(!isset($_SESSION['usuario'])){            
+                echo"usted no esta logueado!.<br>";            
+            }
             
             if (isset($_SESSION['errorAlq'])) {
                 echo "<script>alert(\"horario no disponible\")</script>";
@@ -98,7 +103,7 @@
             }
             
         
-            include "funciones/consultalogin_1.php";
+            include "funciones/alquiler/consultalogin_1.php";
             include "funciones/conectar.php";            
             
             
@@ -163,7 +168,7 @@
                             ?>
                             <label style="color:yellow;margin-left:8em"><?php echo $nombre_dias[$j%7]." ".calcularfecha($i);?></label>
                             <table class="alq">
-                                <form name="formulario" method="post" action="funciones/reserva_1.php">
+                                <form name="formulario" method="post" action="funciones/alquiler/reserva_1.php">
                                 <input type="hidden" value="<?php echo calcularfecha($i)?>" name="fecha"/>
 
                                 <tr>
@@ -223,7 +228,7 @@
                             ?>
                             <label style="color:yellow;margin-left:8em"><?php echo $nombre_dias[$j%7]." ".calcularfecha($i);?></label>
                             <table class="alq">
-                                <form name="formulario" method="post" action="funciones/reserva_1.php">
+                                <form name="formulario" method="post" action="funciones/alquiler/reserva_1.php">
                                 <input type="hidden" value="<?php echo calcularfecha($i)?>" name="fecha"/>
 
                                 <tr>
@@ -284,7 +289,7 @@
                             ?>
                             <label style="color:yellow;margin-left:8em"><?php echo $nombre_dias[$j%7]." ".calcularfecha($i);?></label>
                             <table class="alq">
-                                <form name="formulario" method="post" action="funciones/reserva_1.php">
+                                <form name="formulario" method="post" action="funciones/alquiler/reserva_1.php">
                                 <input type="hidden" value="<?php echo calcularfecha($i)?>" name="fecha"/>
 
                                 <tr>
