@@ -11,31 +11,31 @@ include("funciones/abmUsuarios/mostrarTabla.php")
 
 
 
-<table border="1">
+<table border="1" style="color: white" >
 <tr>
-<td valign="top">
-    <h1 style="font-size: 10">inserta</h1>
+    <td valign="top" rowspan="2">
+    <font size="5"><u>Insertar</u></font>
         <form action="funciones/abmUsuarios/insertar.php" method="post">
-            user<br>
+            User<br>
             <input type="text" name="user" ><br>
-            nombre<br>
+            Nombre<br>
             <input type="text" name="nombre"><br>
-            apellido<br>
+            Apellido<br>
             <input type="text" name="apellido"><br>
             
-                        dni<br>
-            <input type="text" name="dni"><br>
-                        fechanac<br>
+                        Dni<br>
+            <input type="text" name="dni" class="required"><br>
+                        Fechanac<br>
             <input type="text" name="fechanac"><br>
-                        direccion<br>
+                        Direccion<br>
             <input type="text" name="direccion"><br>
-                        localidad<br>
+                        Localidad<br>
             <input type="text" name="localidad"><br>
-                        telcel<br>
+                        Telcel<br>
             <input type="text" name="telcel"><br>
-                        email<br>
-            <input type="text" name="email"><br>
-                        password<br>
+                        Email<br>
+            <input type="text" name="mail" id="mail" class="required email"><br>
+                        Password<br>
             <input type="password" name="password"><br>
             
  
@@ -43,8 +43,8 @@ include("funciones/abmUsuarios/mostrarTabla.php")
         </form>
         <br>
         </td>
-<td valign="top">     
-		<h1>borra</h1>
+<td valign="bottom">     
+    <font size="5"><u>Eliminar</u></font>
         <form action="funciones/abmUsuarios/borra.php" method="post">
             ID<br>
             <input type="text" name="id"><br>
@@ -54,16 +54,18 @@ include("funciones/abmUsuarios/mostrarTabla.php")
         <br>
         
 </td>
-<td valign="top">
-		<h1>modifica</h1>
-        <form action="funciones/abmUsuarios/modifica.php" method="post">
-            ID<br>
-            <input type="text" name="id"><br>
-            
-           <input type="submit" value="modifica">
-        </form>
-        <br>
-</td>
+<tr>
+    <td valign="bottom">
+        <font size="5"><u>Modificar</u></font>
+            <form action="funciones/abmUsuarios/modifica.php" method="post">
+                ID<br>
+                <input type="text" name="id"><br>
+
+               <input type="submit" value="modifica">
+            </form>
+            <br>
+    </td>
+</tr>
 </tr>
 
 </table>

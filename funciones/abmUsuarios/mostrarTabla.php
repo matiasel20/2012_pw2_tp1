@@ -16,7 +16,9 @@ $pdo=conectar();
    
      
   $pdo->commit();  //se guardaría todo “definitivamente”
-  echo "<h1>tabla de usuarios!</h1>";
+  ?>
+  <p style="font-size:20px ; font-family: italic; color: white">Tabla de Clientes!</p>
+  <?php
   //echo $nombre.$apellido.$password;
 } catch (PDOException $e) {
   $pdo->rollBack();  //ante cualquier excepción, revierte todo
@@ -35,7 +37,7 @@ $pdo=conectar();
  };*/
 ?>
 
-<table border="1">
+  <table border="1"  style="font-size:8mpx">
 <tr>
   <td>Id</td><td>user</td><td>Nombre</td><td>Apellido</td><td>Dni</td>
   <td>fechanac</td><td>direccion</td><td>localidad</td><td>telcel</td>
