@@ -37,7 +37,7 @@ $pdo=conectar();
  };*/
 ?>
 
-  <table border="1"  style="font-size:8mpx">
+  <table border="1"  style="font-size:8px">
 <tr>
   <td>Id</td><td>user</td><td>Nombre</td><td>Apellido</td><td>Dni</td>
   <td>fechanac</td><td>direccion</td><td>localidad</td><td>telcel</td>

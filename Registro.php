@@ -100,11 +100,11 @@ float: none; color: #f7fa19; font-weight:bold; padding-left: .5em; vertical-alig
 				<option value="">Seleccione...</option>
 				<option value="1">Rawson</option>
 				<option value="2">Trelew</option>
-				<option value="3">P.Madrin</option>
+				<option value="3">P.Madryn</option>
 			</select>
 			<br/>
 			<label>direccion</label><br/>
-			<input type="text" name="dir" id="dir" class="required" value= ""/>
+			<input type="text" name="dir" id="dir" class="required" />
 			<br/>
 			<label>Usuario</label><br/>
 			<input type="text" name="usuario" id="usuario" class="required"/>
