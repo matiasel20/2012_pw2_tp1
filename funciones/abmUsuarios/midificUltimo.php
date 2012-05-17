@@ -29,7 +29,7 @@ $pdo=conectar();
        $stmt->bindParam(':localidad',$localidad);
        $stmt->bindParam(':telcel',$telcel);
        $stmt->bindParam(':email', $email);
-       $stmt->bindParam(':password', $password);
+       $stmt->bindParam(':password', md5($password));
        $stmt->execute();
 
        

@@ -54,7 +54,7 @@ $pdo=conectar();
               <td><?php echo $fila['localidad'];?></td>
               <td><?php echo $fila['telcel'];?></td>
               <td><?php echo $fila['email'];?></td>
-              <td><?php echo $fila['password'];?></td>
+              <td><?php echo "****";?></td>
 
             </tr>
         <?php endforeach;?>
