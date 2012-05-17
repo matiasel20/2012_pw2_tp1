@@ -62,7 +62,7 @@ $pdo=conectar();
     
      try {
         
-        $sql = "INSERT INTO alquiler (`idAlquiler`, `fecha`,`cancha`,`indumentaria`,`duchas`,`confiteria`,`Cliente_idcliente`) VALUES (NULL, :fecha,:cancha,:ind,:ducha,:conf,:cliente)";
+        $sql = "INSERT INTO alquiler (`idAlquiler`, `fecha`,`cancha`,`indumentaria`,`duchas`,`confiteria`,`clienteid`) VALUES (NULL, :fecha,:cancha,:ind,:ducha,:conf,:cliente)";
 
         //preparamos un statement con el sql anterior
         $stmt = $pdo->prepare($sql);
