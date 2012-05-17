@@ -15,12 +15,12 @@
 	<title>Torneos</title>
 
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-
 	<meta name="generator" content="Geany 0.18" />
 
 	<link rel="stylesheet" href="css/EstiloIndex.css" type="text/css"/>
 	<link rel="stylesheet" href="css/EstiloTorneo.css" type="text/css"/>
 	<link rel="stylesheet" href="javascript\css\ui-lightness\jquery-ui-1.8.16.custom.css" type="text/css"/>
+        
 	<script type="text/javascript" src="javascript\jquery.min.js"></script>
 	<script type="text/javascript" src="javascript\mi_jquery.validate.js"></script>
 	<script type="text/javascript" src="javascript\jquery-ui-1.8.16.custom.min.js"></script>

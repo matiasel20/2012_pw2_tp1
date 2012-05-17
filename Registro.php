@@ -131,7 +131,7 @@
 <!--			<div style="height: 20px;" id="progressbar"></div>-->
 			</br>
 			<input id="button" name="button" type="submit" value="Enviar" />
-		</form>
+		  </form>
                 </div>
     </div>
 		

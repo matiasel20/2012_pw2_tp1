@@ -72,7 +72,7 @@
         <?php
         session_start();   
         if (isset($_SESSION['usuario'])){
-            echo "bienvenido usuario: ".$_SESSION['usuario'];
+            echo "Bienvenido: ".$_SESSION['usuario'];
             echo " <a href=funciones/logout.php>cerrar sesion</a>";
         }
         else {
@@ -102,11 +102,6 @@
 		
    <div class="right">
     
-		<div style="text-align: right">
-                        <?php if (isset($_SESSION['usuario'])):?>
-                            <label sytle="text-align: right"><?php echo $_SESSION['usuario']?> <a href="funciones/logout.php" >cerrar sesion</a></label>
-                        <?php endif?>      
-               </div>
 		<div class="contenido0" style="text-align: right">
 			<FORM action="http://www.google.com/search" method="get" >
 					<INPUT TYPE="text" name="q" size="26" maxlength="255" value="" />
