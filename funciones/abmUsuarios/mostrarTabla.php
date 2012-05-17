@@ -36,7 +36,8 @@ $pdo=conectar();
                 $fila['pass']);
  };*/
 ?>
-    <table border="1"  style="font-size:7px" >
+ <div style="font-size:7px; overflow: auto; width: 300px; height: 100px">
+    <table border="1"  style="font-size:7px; overflow: scroll; width: 5px; height: 5px" >
         <tr>
           <td>Id</td><td>user</td><td>Nombre</td><td>Apellido</td><td>Dni</td>
           <td>fechanac</td><td>direccion</td><td>localidad</td><td>telcel</td>
@@ -59,3 +60,4 @@ $pdo=conectar();
             </tr>
         <?php endforeach;?>
     </table>
+ </div>

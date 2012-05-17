@@ -37,20 +37,22 @@ $pdo=conectar();
  };*/
 
 ?>
-<table border="1">
-<tr>
-    <td>Id</td><td>codigo</td><td>descripcion</td><td>modelo</td><td>tamanio</td>
-  <td>precio</td><td>stock</td>
-</tr>
-<?php foreach($results as $fila):?>
-<tr>
-  <td><?php echo $fila['idproducto'];?></td>
-  <td><?php echo $fila['codigo'];?></td>
-  <td><?php echo $fila['descripcion'];?></td>
-  <td><?php echo $fila['modelo'];?></td>
-  <td><?php echo $fila['tamanio'];?></td>
-  <td><?php echo $fila['precio'];?></td>
-  <td><?php echo $fila['stock'];?></td>
-</tr>
-<?php endforeach;?>
-</table>
+<div style="font-size:7px; overflow: auto; width: 300px; height: 100px">
+    <table border="1" >
+    <tr>
+        <td>Id</td><td>codigo</td><td>descripcion</td><td>modelo</td><td>tamanio</td>
+      <td>precio</td><td>stock</td>
+    </tr>
+    <?php foreach($results as $fila):?>
+    <tr>
+      <td><?php echo $fila['idproducto'];?></td>
+      <td><?php echo $fila['codigo'];?></td>
+      <td><?php echo $fila['descripcion'];?></td>
+      <td><?php echo $fila['modelo'];?></td>
+      <td><?php echo $fila['tamanio'];?></td>
+      <td><?php echo $fila['precio'];?></td>
+      <td><?php echo $fila['stock'];?></td>
+    </tr>
+    <?php endforeach;?>
+    </table>
+</div>

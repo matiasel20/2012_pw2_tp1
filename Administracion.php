@@ -26,8 +26,10 @@
 	<script type="text/javascript" src="javascript\jquery.ui.datepicker-es.js"></script>
 	<script type="text/javascript" src="javascript\funciones.js"></script>
         <script type="text/javascript" src="javascript\vanadium_es.js"></script>
+        
 	<style>
-	#format {  margin-top: 10px; width:100%; font-size:20px;}
+            table  { overflow: visible; width: 50px; height: 50px}  
+            #format {  margin-top: 10px; width:100%; font-size:20px;}
 	</style>
 	
         <style>
