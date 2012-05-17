@@ -344,8 +344,10 @@
 		
     	
     <div class="right">
+        <div style="text-align: right">
                 <?php if (isset($_SESSION['usuario'])):?>
-                <label sytle="text-align: right"><?php echo $_SESSION['usuario']?> <a href="funciones/logout.php" >cerrar sesion</a><label>
+                <label><?php echo $_SESSION['usuario']?> <a href="funciones/logout.php" >Cerrar sesion</a><label>
+        </div>
                 <?php endif?>            
 		<div class="contenido0" style="text-align: right">
 			<FORM action="http://www.google.com/search" method="get" >
