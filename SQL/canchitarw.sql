@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-05-2012 a las 23:07:19
+-- Tiempo de generación: 17-05-2012 a las 12:56:48
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -35,19 +35,9 @@ CREATE TABLE IF NOT EXISTS `alquiler` (
   `confiteria` tinyint(1) NOT NULL DEFAULT '0',
   `clienteid` int(10) unsigned NOT NULL,
   PRIMARY KEY (`idalquiler`),
-  UNIQUE KEY `turno` (`fecha`,`cancha`),
+  UNIQUE KEY `cancha_UNIQUE` (`cancha`,`fecha`),
   KEY `fk_alquiler_cliente1` (`clienteid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
-
---
--- Volcado de datos para la tabla `alquiler`
---
-
-INSERT INTO `alquiler` (`idalquiler`, `cancha`, `fecha`, `indumentaria`, `duchas`, `confiteria`, `clienteid`) VALUES
-(1, 1, '2012-05-17 11:00:00', 0, 0, 0, 3),
-(2, 1, '2012-05-17 12:00:00', 0, 0, 0, 3),
-(3, 2, '2012-05-17 11:00:00', 0, 0, 0, 3),
-(4, 1, '2012-05-17 13:00:00', 1, 1, 0, 3);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -67,18 +57,11 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `telcel` varchar(45) NOT NULL,
   `email` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
-  `equipoid` int(11) DEFAULT NULL,
+  `equipoid` int(11) NOT NULL,
   PRIMARY KEY (`idcliente`),
   UNIQUE KEY `user_UNIQUE` (`user`),
   KEY `fk_Cliente_Equipo1` (`equipoid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='\n	\n					' AUTO_INCREMENT=4 ;
-
---
--- Volcado de datos para la tabla `cliente`
---
-
-INSERT INTO `cliente` (`idcliente`, `user`, `nombre`, `apellido`, `dni`, `fechanac`, `direccion`, `localidad`, `telcel`, `email`, `password`, `equipoid`) VALUES
-(3, 'sebamach', 'sebastian', 'machado', '333', '0000-00-00', 'san martin', '1', '155', 'seba@seba.com', '123', NULL);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='\n	\n					' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -91,8 +74,10 @@ CREATE TABLE IF NOT EXISTS `compra` (
   `cantidad` int(10) unsigned NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `clienteid` int(10) unsigned NOT NULL,
+  `productoid` int(10) unsigned NOT NULL,
   PRIMARY KEY (`idcompra`),
-  KEY `fk_Compra_Cliente1` (`clienteid`)
+  KEY `fk_Compra_Cliente1` (`clienteid`),
+  KEY `fk_compra_producto1` (`productoid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -144,9 +129,7 @@ CREATE TABLE IF NOT EXISTS `producto` (
   `tamanio` varchar(45) DEFAULT NULL,
   `precio` decimal(5,2) unsigned NOT NULL,
   `stock` varchar(45) NOT NULL,
-  `compraid` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`idproducto`),
-  KEY `fk_producto_compra1` (`compraid`)
+  PRIMARY KEY (`idproducto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -172,7 +155,7 @@ CREATE TABLE IF NOT EXISTS `torneo` (
 -- Filtros para la tabla `alquiler`
 --
 ALTER TABLE `alquiler`
-  ADD CONSTRAINT `alquiler_ibfk_1` FOREIGN KEY (`clienteid`) REFERENCES `cliente` (`idcliente`) ON DELETE CASCADE ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_alquiler_cliente1` FOREIGN KEY (`clienteid`) REFERENCES `cliente` (`idcliente`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `cliente`
@@ -184,19 +167,14 @@ ALTER TABLE `cliente`
 -- Filtros para la tabla `compra`
 --
 ALTER TABLE `compra`
-  ADD CONSTRAINT `fk_Compra_Cliente1` FOREIGN KEY (`clienteid`) REFERENCES `cliente` (`idcliente`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Compra_Cliente1` FOREIGN KEY (`clienteid`) REFERENCES `cliente` (`idcliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_compra_producto1` FOREIGN KEY (`productoid`) REFERENCES `producto` (`idproducto`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `equipo`
 --
 ALTER TABLE `equipo`
   ADD CONSTRAINT `fk_Equipo_Torneo1` FOREIGN KEY (`torneoid`) REFERENCES `torneo` (`idtorneo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `producto`
---
-ALTER TABLE `producto`
-  ADD CONSTRAINT `fk_producto_compra1` FOREIGN KEY (`compraid`) REFERENCES `compra` (`idcompra`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
