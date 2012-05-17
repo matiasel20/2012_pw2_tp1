@@ -344,23 +344,17 @@
 		
     	
     <div class="right">
-        <div style="text-align: right">
-                <?php if (isset($_SESSION['usuario'])):?>
-                <label><?php echo $_SESSION['usuario']?> <a href="funciones/logout.php" >Cerrar sesion</a><label>
-        </div>
-                <?php endif?>            
+               <div style="text-align: right">
+                        <?php if (isset($_SESSION['usuario'])):?>
+                            <label sytle="text-align: right"><?php echo $_SESSION['usuario']?> <a href="funciones/logout.php" >cerrar sesion</a></label>
+                        <?php endif?>      
+               </div>
 		<div class="contenido0" style="text-align: right">
 			<FORM action="http://www.google.com/search" method="get" >
-				
-				<TABLE>
-					<tr><td>
-					<INPUT TYPE=text name=q size=28 maxlength=255 value="" >
-					<INPUT TYPE=hidden name=hl value=es>
-					<INPUT type=submit name=btnG VALUE="Búsqueda Google">
-					</td></tr>
-				</TABLE>
+					<INPUT TYPE="text" name="q" size="26" maxlength="255" value="" />
+					<INPUT TYPE="hidden" name="hl" value="es"/>
+                                        <INPUT type="submit" name="btnG" VALUE="Búsqueda Google"/>
 			</FORM>
-			</center>
 		</div>
 		
 		<div class="contenido3">
@@ -382,7 +376,7 @@
 </div>
 
 <div class="pie">
-<p>Diseñado por Aspiroz, Figueroa, Gensana, Machado</p> <a href="Administracion.html" >Administracion</a>
+<p>Diseñado por Aspiroz, Figueroa, Gensana, Machado</p> <a href="Administracion.php" >Administracion</a>
 </div> 
 
 </body>

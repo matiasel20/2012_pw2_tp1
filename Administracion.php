@@ -81,7 +81,7 @@ float: none; color: #f7fa19; font-weight:bold; padding-left: .5em; vertical-alig
 			<a id="format" class="link" href="Proveedores.php">Proveedores</a>
 		</div>
       
-    </div>
+         </div>
 	
 	<div class="center">
             <?php include "funciones/abmProductos/formularioABMP.php";
@@ -90,15 +90,15 @@ float: none; color: #f7fa19; font-weight:bold; padding-left: .5em; vertical-alig
     </div>
 		
    <div class="right">
-       <div style="text-align: right">
-                <?php if (isset($_SESSION['usuario'])):?>
-                    <label sytle="text-align: right"><?php echo $_SESSION['usuario']?> <a href="funciones/logout.php" >cerrar sesion</a></label>
-                <?php endif?>      
-       </div>
+               <div style="text-align: right">
+                        <?php if (isset($_SESSION['usuario'])):?>
+                            <label sytle="text-align: right"><?php echo $_SESSION['usuario']?> <a href="funciones/logout.php" >cerrar sesion</a></label>
+                        <?php endif?>      
+               </div>
 		<div class="contenido0" style="text-align: right">
 			<FORM action="http://www.google.com/search" method="get" >
-					<INPUT TYPE="text" name="q" size="28" maxlength="255" value="" />
-					<INPUT TYPE="hidden" name="hl" value="es"/></br>
+					<INPUT TYPE="text" name="q" size="26" maxlength="255" value="" />
+					<INPUT TYPE="hidden" name="hl" value="es"/>
                                         <INPUT type="submit" name="btnG" VALUE="Búsqueda Google"/>
 			</FORM>
 		</div>
@@ -119,7 +119,7 @@ float: none; color: #f7fa19; font-weight:bold; padding-left: .5em; vertical-alig
 			<br/>
 		</div>
     </div>
-
+ </div>
 
 <div class="pie">
 <p>Diseñado por Aspiroz, Figueroa, Gensana, Machado</p> Administracion

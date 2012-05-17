@@ -379,24 +379,18 @@
     </div>
 		
   <div class="right">
-      <?php if (isset($_SESSION['usuario'])):?>
-                <label sytle="text-align: right"><?php echo $_SESSION['usuario']?> <a href="funciones/logout.php" >cerrar sesion</a><label>
-                <?php endif?>      
-    
+               <div style="text-align: right">
+                        <?php if (isset($_SESSION['usuario'])):?>
+                            <label sytle="text-align: right"><?php echo $_SESSION['usuario']?> <a href="funciones/logout.php" >cerrar sesion</a></label>
+                        <?php endif?>      
+               </div>
 		<div class="contenido0" style="text-align: right">
 			<FORM action="http://www.google.com/search" method="get" >
-				
-				<TABLE style=" border :none ; height:0">
-					<tr border='none' >
-					<INPUT TYPE=text name=q size=28 maxlength=255 value="" >
-					<INPUT TYPE=hidden name=hl value=es>
-					<INPUT type=submit name=btnG VALUE="Búsqueda Google">
-					</td></tr>
-				</TABLE>
+					<INPUT TYPE="text" name="q" size="26" maxlength="255" value="" />
+					<INPUT TYPE="hidden" name="hl" value="es"/>
+                                        <INPUT type="submit" name="btnG" VALUE="Búsqueda Google"/>
 			</FORM>
-			</center>
 		</div>
-		
 		<div class="contenido3">
 			<a href="http://msn.foxsports.com/fse/argentina" >
 			<img class="propaganda" src="img/propaganda1.jpg" alt="Click to see enlarged image"/>
