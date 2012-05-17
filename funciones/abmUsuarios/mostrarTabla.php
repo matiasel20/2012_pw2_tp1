@@ -36,29 +36,26 @@ $pdo=conectar();
                 $fila['pass']);
  };*/
 ?>
-
-  <table border="1"  style="font-size:8px">
-<tr>
-  <td>Id</td><td>user</td><td>Nombre</td><td>Apellido</td><td>Dni</td>
-  <td>fechanac</td><td>direccion</td><td>localidad</td><td>telcel</td>
-  <td>email</td><td>password</td>
-</tr>
-<?php foreach($results as $fila):?>
-<tr>
-  <td><?php echo $fila['idcliente'];?></td>
-  
-  <td><?php echo $fila['user'];?></td>
-  <td><?php echo $fila['nombre'];?></td>
-  <td><?php echo $fila['apellido'];?></td>
-  <td><?php echo $fila['dni'];?></td>
-        <td><?php echo $fila['fechanac'];?></td>
-    <td><?php echo $fila['direccion'];?></td>
+    <table border="1"  style="font-size:7px" >
+        <tr>
+          <td>Id</td><td>user</td><td>Nombre</td><td>Apellido</td><td>Dni</td>
+          <td>fechanac</td><td>direccion</td><td>localidad</td><td>telcel</td>
+          <td>email</td><td>password</td>
+        </tr>
+        <?php foreach($results as $fila):?>
+            <tr>
+              <td><?php echo $fila['idcliente'];?></td>
+              <td><?php echo $fila['user'];?></td>
+              <td><?php echo $fila['nombre'];?></td>
+              <td><?php echo $fila['apellido'];?></td>
+              <td><?php echo $fila['dni'];?></td>
+              <td><?php echo $fila['fechanac'];?></td>
+              <td><?php echo $fila['direccion'];?></td>
               <td><?php echo $fila['localidad'];?></td>
-        <td><?php echo $fila['telcel'];?></td>
+              <td><?php echo $fila['telcel'];?></td>
+              <td><?php echo $fila['email'];?></td>
+              <td><?php echo $fila['password'];?></td>
 
-                        <td><?php echo $fila['email'];?></td>
-            <td><?php echo $fila['password'];?></td>
-
-</tr>
-<?php endforeach;?>
-</table>
+            </tr>
+        <?php endforeach;?>
+    </table>

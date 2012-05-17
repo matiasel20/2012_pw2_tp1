@@ -14,20 +14,20 @@ include("funciones/abmUsuarios/mostrarTabla.php")
     <font size="5"><u>Insertar</u></font>
         <form id="formulario" action="funciones/abmUsuarios/insertar.php" method="post"class="formulario">
             User<br>
-            <input type="text" name="user" class="required"><br>
+            <input type="text" name="user" id="user" minlength="4" class="required"/><br>
             Nombre<br>
             <input type="text" name="nombre" class="required"><br>
             Apellido<br>
             <input type="text" name="apellido" class="required"><br>
             
                         DNI<br>
-            <input type="text" name="dni" class="required"><br>
+            <input type="text" name="dni" class="required digits"><br>
                         Fecha Nacimiento<br>
-            <input type="text" name="fechanac" class="required"><br>
+            <input type="text" name="fechanac" id="cuenta" value= ""  class="required"/><br>
                         Direccion<br>
-            <input type="text" name="direccion" class="required"><br>
+            <input type="text" name="direccion" ><br>
             <label class= "option" for="localidad">Localidad:</label>
-               <select id="localidad"  name="localidad">
+               <select id="localidad"  name="localidad" class="required">
                        <option value="">Seleccione...</option>
                        <option value="1">Rawson</option>
                        <option value="2">Trelew</option>
@@ -36,7 +36,7 @@ include("funciones/abmUsuarios/mostrarTabla.php")
                         Telcel<br>
             <input type="text" name="telcel"><br>
                         Email<br>
-            <input type="text" name="mail" id="mail" class="required email"><br>
+            <input type="text" name="email" id="mail" class="required email"><br>
                         Password<br>
             <input type="password" name="password" class="required"><br>
             

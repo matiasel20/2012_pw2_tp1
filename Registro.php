@@ -32,10 +32,10 @@
 	<style>
 	#format {  margin-top: 10px; width:100%; font-size:20px;}
 	label.error { float: none; color: #f7fa19; font-weight:bold; padding-left: .5em; vertical-align: top; font-size:10px; }
-		.ui-progressbar-value { background-image: url(javascript/css/ui-lightness/images/progressbar_short.gif); }
-.vanadium-advice.vanadium-invalid, .vanadium-advice.vanadium-invalid * {
-float: none; color: #f7fa19; font-weight:bold; padding-left: .5em; vertical-align: top; font-size:10px; 
-}
+	.ui-progressbar-value { background-image: url(javascript/css/ui-lightness/images/progressbar_short.gif); }
+        .vanadium-advice.vanadium-invalid, .vanadium-advice.vanadium-invalid * {
+            float: none; color: #f7fa19; font-weight:bold; padding-left: .5em; vertical-align: top; font-size:10px; 
+        }
 
 	</style>
 	
@@ -85,6 +85,9 @@ float: none; color: #f7fa19; font-weight:bold; padding-left: .5em; vertical-alig
 			<label>Apellido</label><br/>
 			<input type="text" name="ape" id="ape" class="required" value= ""/>
 			<br/>
+                        <label>DNI</label><br/>
+                        <input type="text" name="dni" class="digits required">
+                        <br>
 			<label>Fecha</label><br/>
 			<input type="text" name="cuenta" id="cuenta" value= ""  class="required"/>
 			<br/><br/>
