@@ -37,7 +37,7 @@ $pdo=conectar();
  };*/
 
 ?>
-<div style="font-size:9px; overflow: auto; width: 300px; height: 100px">
+<div style="font-size:12px; color: white; overflow: auto; width: 300px; height: 100px">
     <table border="1" >
     <tr>
         <td>Id</td><td>codigo</td><td>descripcion</td><td>modelo</td><td>tamanio</td>
@@ -52,8 +52,8 @@ $pdo=conectar();
       <td><?php echo $fila['tamanio'];?></td>
       <td><?php echo $fila['precio'];?></td>
       <td><?php echo $fila['stock'];?></td>
-      <td><input id="button" name="button" type="submit" value="X" /></td>
-      <td><input id="button" name="button" type="submit" value="M" /></td>
+      <td><input type="button" value="X" style="font-size: 8px"></td>
+      <td><input type="button" value="M" style="font-size: 8px"></td>
     </tr>
     <?php endforeach;?>
     </table>

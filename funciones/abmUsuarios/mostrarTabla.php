@@ -36,8 +36,8 @@ $pdo=conectar();
                 $fila['pass']);
  };*/
 ?>
- <div style="font-size:9px; overflow: auto; width: 300px; height: 100px">
-    <table border="1"  style="font-size:7px; overflow: scroll; width: 5px; height: 5px" >
+ <div style="font-size:12px; color: white; overflow: auto; width: 300px; height: 100px">
+    <table border="1">
         <tr>
           <td>Id</td><td>user</td><td>Nombre</td><td>Apellido</td><td>Dni</td>
           <td>fechanac</td><td>direccion</td><td>localidad</td><td>telcel</td>
@@ -56,8 +56,8 @@ $pdo=conectar();
               <td><?php echo $fila['telcel'];?></td>
               <td><?php echo $fila['email'];?></td>
               <td><?php echo "****";?></td>
-              <td><input id="button" name="button" type="submit" value="X" /></td>
-              <td><input id="button" name="button" type="submit" value="M" /></td>
+              <td><input type="button" value="X" style="font-size: 8px"></td>
+              <td><input type="button" value="M" style="font-size: 8px"></td>
             </tr>
         <?php endforeach;?>
     </table>
