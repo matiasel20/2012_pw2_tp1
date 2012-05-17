@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 17-05-2012 a las 12:56:48
+-- Tiempo de generación: 17-05-2012 a las 13:20:54
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `alquiler` (
   PRIMARY KEY (`idalquiler`),
   UNIQUE KEY `cancha_UNIQUE` (`cancha`,`fecha`),
   KEY `fk_alquiler_cliente1` (`clienteid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -57,11 +57,11 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `telcel` varchar(45) NOT NULL,
   `email` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
-  `equipoid` int(11) NOT NULL,
+  `equipoid` int(11) DEFAULT NULL,
   PRIMARY KEY (`idcliente`),
   UNIQUE KEY `user_UNIQUE` (`user`),
   KEY `fk_Cliente_Equipo1` (`equipoid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='\n	\n					' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='\n	\n					' AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 

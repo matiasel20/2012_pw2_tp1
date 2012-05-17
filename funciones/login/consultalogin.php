@@ -16,7 +16,7 @@ function consultalogin($pdo) {
 
         //sutituimos lso parametros con los valores reales
         $stmt->bindParam(':usuario',$_POST['usuario']);
-        $stmt->bindParam(':pass',$_POST['pass']);
+        $stmt->bindParam(':pass',md5($_POST['pass']));
 
         //ejecutamos la consulta
         $stmt->execute();
