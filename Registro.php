@@ -50,15 +50,14 @@
 		
 		
 		<div class="logo">
-				<div class="pelota">
-			
-			<img class="pelota" src="img/photo.gif" alt="Click to see enlarged image"/>
-
+                        <div class="pelota">
+                            <img class="pelota" src="img/photo.gif" alt="Click to see enlarged image"/>
+                        </div>
+                        <div class="titulo"><h1>La Canchita de Rawson</h1></div>
+                        <div class="calendario" id="calendario" style="font-size:0.5em">
+                        </div>
 		</div>
-		<div class="titulo"><h1>La Canchita de Rawson</h1></div>
-		<div class="calendario" id="calendario" style="font-size:0.5em">
-		</div>
-		</div>
+    
 <div class="principal">
 	<div class="left">
 
@@ -75,29 +74,29 @@
     </div>
 	
 	<div class="center">
-		<div class="contenido1" style="text-align:left;">
-			<form id="formulario" method="post" class="formulario">
+		<div class="contenido1" style="text-align:left">
+		   <form id="formulario" method="post" class="formulario">
 			<h2>Registro</h2>
-			<br/>
-			<label>Nombre</label><br/>
+			</br>
+			<label>Nombre</label></br>
 			<input type="text" name="nomb" id="nomb" class="required" value= ""/>
-			<br/>
-			<label>Apellido</label><br/>
+			</br>
+			<label>Apellido</label></br>
 			<input type="text" name="ape" id="ape" class="required" value= ""/>
-			<br/>
-                        <label>DNI</label><br/>
-                        <input type="text" name="dni" class="digits required">
-                        <br>
-			<label>Fecha</label><br/>
+			</br>
+                        <label>DNI</label></br>
+                        <input type="text" name="dni" class="digits required"/>
+                        </br>
+			<label>Fecha</label></br>
 			<input type="text" name="cuenta" id="cuenta" value= ""  class="required"/>
-			<br/><br/>
+			</br></br>
 			
-			<label>Telefono</label><br/>
+			<label>Telefono</label></br>
 
 
 			<input type="text" name="telnum" id="telnum" value= ""/>
 
-			<br/><br/>
+			</br></br>
 			<label class= "option" for="localidad">Localidad:</label>
 			<select id="localidad"  name="localidad">
 				<option value="">Seleccione...</option>
@@ -105,58 +104,50 @@
 				<option value="2">Trelew</option>
 				<option value="3">P.Madryn</option>
 			</select>
-			<br/>
-			<label>direccion</label><br/>
+			</br>
+			<label>direccion</label></br>
 			<input type="text" name="dir" id="dir" class="required" />
-			<br/>
-			<label>Usuario</label><br/>
+			</br>
+			<label>Usuario</label></br>
 			<input type="text" name="usuario" id="usuario" class="required"/>
-			<br/>
-			<label>E-mail</label><br/>
+			</br>
+			<label>E-mail</label></br>
 			<input type="text" name="mail" id="mail" class="required email"/>
-			<br/>
-			<label>Contrase&ntilde;a</label><br/>
+			</br>
+			<label>Contrase&ntilde;a</label></br>
 			<input type="password" name="pass1" id="pass1" class="required"/>
-			<br/>
-			<label>Validar Contrase&ntilde;a</label><br/>
+			</br>
+			<label>Validar Contrase&ntilde;a</label></br>
 			<input type="password" name="pass2" id="pass2" class="required"/>
-			<br/>
+			</br>
 			<input type="checkbox" name="lelele" id="lololo"/>
-			<label class= "option" for="nombre">Recibir Noticias de nuestra WEB</label><br/>
+			<label class= "option" for="nombre">Recibir Noticias de nuestra WEB</label></br>
 			<input type="checkbox" name="lalala" id="lululu"/>
-			<label class= "option" for="nombre">Recibir Catalogo de indumentaria y equipo</label><br/>
+			<label class= "option" for="nombre">Recibir Catalogo de indumentaria y equipo</label></br>
 			<input type="checkbox" name="lalala" id="lululu2"/>
-			<label class= "option" for="nombre">Recibir Publicided de nuestros sponsors</label><br/>
+			<label class= "option" for="nombre">Recibir Publicided de nuestros sponsors</label></br>
 			
-			<br/>
-			<div style="height: 20px;" id="progressbar"></div>
-			<br/>
+			</br>
+<!--			<div style="height: 20px;" id="progressbar"></div>-->
+			</br>
 			<input id="button" name="button" type="submit" value="Enviar" />
 		</form>
-		</div>
-		
-		<br/>
-		
+                </div>
     </div>
 		
     <div class="right">
         
-        <?php if (isset($_SESSION['usuario'])):?>
-                <label sytle="text-align: right"><?php echo $_SESSION['usuario']?> <a href="funciones/logout.php" >cerrar sesion</a><label>
-                <?php endif?>      
-    
+                <div style="text-align: right">
+                        <?php if (isset($_SESSION['usuario'])):?>
+                            <label sytle="text-align: right"><?php echo $_SESSION['usuario']?> <a href="funciones/logout.php" >cerrar sesion</a></label>
+                        <?php endif?>      
+               </div>
 		<div class="contenido0" style="text-align: right">
 			<FORM action="http://www.google.com/search" method="get" >
-				
-				<TABLE>
-					<tr><td>
-					<INPUT TYPE=text name=q size=28 maxlength=255 value="" >
-					<INPUT TYPE=hidden name=hl value=es>
-					<INPUT type=submit name=btnG VALUE="Búsqueda Google">
-					</td></tr>
-				</TABLE>
+					<INPUT TYPE="text" name="q" size="26" maxlength="255" value="" />
+					<INPUT TYPE="hidden" name="hl" value="es"/>
+                                        <INPUT type="submit" name="btnG" VALUE="Búsqueda Google"/>
 			</FORM>
-			</center>
 		</div>
 		
 		<div class="contenido3">
@@ -172,14 +163,14 @@
 			<img class="propaganda" src="img/propaganda3.jpg" alt="Click to see enlarged image"/>
 			</a>
 
-			<br/>
+			</br>
 		</div>
     </div>
 
+</div> 
 
 <div class="pie">
 <p>Diseñado por Aspiroz, Figueroa, Gensana, Machado</p> <a href="Administracion.php" >Administracion</a>
-</div> 
 </div> 
 
 </body>

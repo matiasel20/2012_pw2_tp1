@@ -43,19 +43,14 @@
 
 		
 		
-		<div class="logo">
-				<div class="pelota">
-			
-			<img class="pelota" src="img/photo.gif" alt="Click to see enlarged image"/>
+<div class="logo">
+   <div class="pelota">
+        <img class="pelota" src="img/photo.gif" alt="Click to see enlarged image"/>
+    </div>
+    <div class="titulo"><h1>La Canchita de Rawson</h1></div>
+    <div class="calendario" id="calendario" style="font-size:0.5em"></div>
 
-		</div>
-		<div class="titulo"><h1>La Canchita de Rawson</h1></div>
-		
-		
-		<div class="calendario" id="calendario" style="font-size:0.5em">
-		</div>
-
-		</div>
+</div>
 <div class="principal">
 	<div class="left">
 
@@ -70,24 +65,26 @@
 		</div>
       
     </div>
-	
-	<div class="center">
+
+    <div class="center">
 
 		<div class="contenido1">
 			<b>Galeria de Imagenes</b>
 			
 			<table border="0" cellpadding="0" align="center">
 			  <tr>
-				<td width="100%"><img src="noticias/noticia1.JPG" width="400" height="250" name="galeria"></td>
+				<td width="100%"><img src="noticias/noticia1.JPG" width="400" height="250" name="galeria"/></td>
 			  </tr>
 			  <tr>
 				<td width="100%">
 				<form method="POST" name="rotater">
-				  <div align="center"><center>
-				   <input type="button" value="<<Anterior" name="B2" onClick="window.clearTimeout(timeoutID);  backward()">
-				   <input type="button" value="Play>|" name="B0" onClick="window.setTimeout('automatico()', 3000, true);">
-				   <input type="button" value="Siguiente>>" name="B1" onClick="window.clearTimeout(timeoutID);  forward()">
-				   </br>
+				  <div align="center">
+				   <input type="button" value="--Anterior" name="B2" onClick="window.clearTimeout(timeoutID);  backward()"/>
+				   <input type="button" value="Play>|" name="B0" onClick="window.setTimeout('automatico()', 3000, true);"/>
+				   <input type="button" value="Siguiente++" name="B1" onClick="window.clearTimeout(timeoutID);  forward()"/>
+                                   <br></br>
+                                       
+                                       
 				  </div>
 				 </form>
 				</td>
@@ -106,26 +103,20 @@
 		</div>
 		
     </div>
-</div>
 
     <div class="right">
         
-        <?php if (isset($_SESSION['usuario'])):?>
-                <label sytle="text-align: right"><?php echo $_SESSION['usuario']?> <a href="funciones/logout.php" >cerrar sesion</a><label>
-                <?php endif?>      
-    
+               <div style="text-align: right">
+                        <?php if (isset($_SESSION['usuario'])):?>
+                            <label sytle="text-align: right"><?php echo $_SESSION['usuario']?> <a href="funciones/logout.php" >cerrar sesion</a></label>
+                        <?php endif?>      
+               </div>
 		<div class="contenido0" style="text-align: right">
 			<FORM action="http://www.google.com/search" method="get" >
-				
-				<TABLE>
-					<tr><td>
-					<INPUT TYPE=text name=q size=28 maxlength=255 value="" >
-					<INPUT TYPE=hidden name=hl value=es>
-					<INPUT type=submit name=btnG VALUE="Búsqueda Google">
-					</td></tr>
-				</TABLE>
+					<INPUT TYPE="text" name="q" size="26" maxlength="255" value="" />
+					<INPUT TYPE="hidden" name="hl" value="es"/>
+                                        <INPUT type="submit" name="btnG" VALUE="Búsqueda Google"/>
 			</FORM>
-			</center>
 		</div>
 		
 		<div class="contenido3">
@@ -146,8 +137,8 @@
   
  
     
+   </div>
 </div>
-
 <div class="pie">
 	<p>Diseñado por Aspiroz, Figueroa, Gensana, Machado</p> <a href="Administracion.php" >Administracion</a>
 	
@@ -155,7 +146,6 @@
 	
 </div> 
 
-</div> 
 </body>
 
 </html>
