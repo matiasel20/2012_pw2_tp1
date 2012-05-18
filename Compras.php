@@ -112,8 +112,8 @@ include("funciones/compra/muestratablaACC.php");
               <td><?php echo $fila['stock'];?></td>
 
 
-              <td><input type="button" value="X" style="font-size: 8px"></td>
-              <td><input type="button" value="M" style="font-size: 8px"></td>
+              <td><input type="button" value="BUY" style="font-size: 8px"></td>
+
             </tr>
         <?php endforeach;?>
     </table>
