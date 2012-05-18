@@ -1,4 +1,4 @@
-img.producto {
+img.productomedias {
 width:100px;
 height:90px;
 float:left;
@@ -6,6 +6,48 @@ margin-bottom:5%;
 margin-top:5%;
 border: solid black;
 }
+img.productocalzado {
+width:100px;
+height:90px;
+float:left;
+margin-bottom:5%;
+margin-top:5%;
+border: solid black;
+}
+img.productopelotas {
+width:100px;
+height:90px;
+float:left;
+margin-bottom:5%;
+margin-top:5%;
+border: solid black;
+}
+img.productoconjuntos{
+width:100px;
+height:90px;
+float:left;
+margin-bottom:5%;
+margin-top:5%;
+border: solid black;
+}
+img.productocamisetas {
+width:100px;
+height:90px;
+float:left;
+margin-bottom:5%;
+margin-top:5%;
+border: solid black;
+}
+img.productopantalones{
+width:100px;
+height:90px;
+float:left;
+margin-bottom:5%;
+margin-top:5%;
+border: solid black;
+}
+
+
 table.torneo{
 float:right;
 border: solid black 3px;

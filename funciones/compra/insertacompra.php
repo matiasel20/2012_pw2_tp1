@@ -1,3 +1,4 @@
+
 <form action="alta.php" method="post">
             
             cantidad<br>

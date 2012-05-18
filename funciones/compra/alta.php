@@ -32,3 +32,4 @@ $fecha2=sprintf('%s',date("Y/m/d H:i:s"));
 
 ?>
 
+
