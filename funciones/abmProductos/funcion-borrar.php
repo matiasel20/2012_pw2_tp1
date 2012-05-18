@@ -1,6 +1,9 @@
 <?php
+include("../conectar.php");
+extract($_GET);
+//session_start();
+$pdo=conectar();
 
-function borrarp ($id){
     try {
         $pdo->beginTransaction();
         $sql="delete from producto where idproducto = :identificador"; 
@@ -20,6 +23,6 @@ function borrarp ($id){
       $pdo->rollBack();  //ante cualquier excepción, revierte todo
        echo 'La operación ha fallado: ' . $e->getMessage();
     }
-}
+
 
 ?>

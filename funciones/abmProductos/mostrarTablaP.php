@@ -74,15 +74,17 @@ function borrarp ($id){
     <?php foreach($results as $fila):?>
     <tr>
       <td><?php echo $fila['idproducto'];?></td>
-      <?php $aux = $fila['idproducto'] ?>
+      <?php $i = $fila['idproducto'] ?>
       <td><?php echo $fila['codigo'];?></td>
       <td><?php echo $fila['descripcion'];?></td>
       <td><?php echo $fila['modelo'];?></td>
       <td><?php echo $fila['tamanio'];?></td>
       <td><?php echo $fila['precio'];?></td>
       <td><?php echo $fila['stock'];?></td>
-      <td><input type="button" value="X" onclick="" style="font-size: 8px"></td>
-      <td><input type="button" value="M" onclick="" style="font-size: 8px"></td>
+      <td><input type="button" value="X" style="font-size: 8px">
+          <a href="funciones/abmProductos/funcion-borrar.php?id=<?php echo $i?>"></a>
+      </td>
+      <td><input type="button" value="M" style="font-size: 8px"></td>
     </tr>
     <?php endforeach;?>
     </table>
