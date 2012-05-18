@@ -10,10 +10,14 @@ $pdo=conectar();
     $sql="delete from cliente where idcliente = :identificador"; 
      $stmt = $pdo->prepare($sql);
       //$stmt->setFetchMode(PDO::FETCH_ASSOC);
-       $stmt->bindParam(':identificador', $id);
-
        
-       $stmt->execute();
+       if(isset ($_GET['idX'])){
+           $stmt->bindParam(':identificador', $_GET['idX']);
+           echo 'set='.$_GET['idX'];
+           unset ($_GET['idX']);
+       }else
+           $stmt->bindParam(':identificador', $id);
+           $stmt->execute();
        
    
      

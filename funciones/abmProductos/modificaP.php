@@ -3,7 +3,6 @@
 include("../conectar.php");
 extract($_POST);
 session_start();
-$_SESSION['identifikador']=$id;
 
 $pdo=conectar();
 
@@ -12,11 +11,17 @@ $pdo=conectar();
     $sql="select * from producto where idproducto = :identificador"; 
      $stmt = $pdo->prepare($sql);
       //$stmt->setFetchMode(PDO::FETCH_ASSOC);
-       $stmt->bindParam(':identificador',$_SESSION['identifikador']);
-
-       
+      
+       if(isset ($_GET['idX'])){
+           $stmt->bindParam(':identificador', $_GET['idX']);
+           $_SESSION['identifikador']=$_GET['idX'];
+           unset ($_GET['idX']);
+       }else{
+           $_SESSION['identifikador']=$id;
+           $stmt->bindParam(':identificador',$_SESSION['identifikador']);
+       }  
        $stmt->execute();
-              $results = $stmt->fetchAll();
+       $results = $stmt->fetchAll();
        
    
      
@@ -34,28 +39,28 @@ $pdo=conectar();
  };
 ?>
                
-                <h1>modificar datos</h1>
+                <h1>Modificar Producto</h1>
         <form action="midificUltimoP.php" method="post">
-            codigo<br>
-            <input type="text" name="codigo" value=<?php echo $fila['codigo'];?>><br>
-                        descripcion<br>
-            <input type="text" name="descripcion" value=<?php echo $fila['descripcion'];?>><br>
+            Codigo</br>
+            <input type="text" name="codigo" value=<?php echo $fila['codigo'];?>/></br>
+                        Descripcion<br>
+            <input type="text" name="descripcion" value=<?php echo $fila['descripcion'];?>/></br>
                       
-                        modelo<br>
-            <input type="text" name="modelo" value=<?php echo $fila['modelo'];?>><br>
+                        Modelo<br>
+            <input type="text" name="modelo" value=<?php echo $fila['modelo'];?>/></br>
             
-                        tamanio<br>
-            <input type="text" name="tamanio" value=<?php echo $fila['tamanio'];?>><br>
+                        Tamanio<br>
+            <input type="text" name="tamanio" value=<?php echo $fila['tamanio'];?>/></br>
             
-                        precio<br>
-            <input type="text" name="precio" value=<?php echo $fila['precio'];?>><br>
+                        Precio<br>
+            <input type="text" name="precio" value=<?php echo $fila['precio'];?>/></br>
  
-                        stock<br>
-            <input type="text" name="stock" value=<?php echo $fila['stock'];?>><br>
+                        Stock<br>
+            <input type="text" name="stock" value=<?php echo $fila['stock'];?>/></br>
             
-                        categoria<br>
-            <input type="text" name="categoriaid" value=<?php echo $fila['categoriaid'];?>><br>
+                        Categoria<br>
+            <input type="text" name="categoriaid" value=<?php echo $fila['categoriaid'];?>/></br>
             
-           <input type="submit" value="modificarrr" >
+           <input type="submit" value="Modificar" >
         </form>
-        <br>
+        </br>

@@ -56,8 +56,8 @@ $pdo=conectar();
               <td><?php echo $fila['telcel'];?></td>
               <td><?php echo $fila['email'];?></td>
               <td><?php echo "****";?></td>
-              <td><input type="button" value="X" style="font-size: 8px"></td>
-              <td><input type="button" value="M" style="font-size: 8px"></td>
+              <td><a href="funciones/abmUsuarios/borra.php?idX=<?php echo $fila['idcliente']?>">Borrar</a></td>
+              <td><a href="funciones/abmUsuarios/modifica.php?idX=<?php echo $fila['idcliente']?>">Modificar</a></td>
             </tr>
         <?php endforeach;?>
     </table>

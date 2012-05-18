@@ -20,7 +20,7 @@ $pdo=conectar();
      
   $pdo->commit();  //se guardaría todo “definitivamente”
   ?>
-<p style="font-size:20px ; font-family: italic; color: white">Tabla de Productos!</p>
+    <p style="font-size:20px ; font-family: italic; color: white">Tabla de Productos!</p>
   <?php
   //echo $nombre.$apellido.$password;
 } catch (PDOException $e) {
@@ -58,12 +58,8 @@ $pdo=conectar();
       <td><?php echo $fila['precio'];?></td>
       <td><?php echo $fila['stock'];?></td>
       <td><?php echo $fila['cat'];?></td>
-      <td><input type="button" value="X" style="font-size: 8px" 
-                 onclick="<a href="funciones/abmProductos/borraP.php?idX=<?php echo $fila['idproducto']?>"></a>">
-          
-      </td>
-      <td></td>
-      <td><input type="button" value="M" style="font-size: 8px"></td>
+      <td><a href="funciones/abmProductos/borraP.php?idX=<?php echo $fila['idproducto']?>">Borrar</a></td>
+      <td><a href="funciones/abmProductos/modificaP.php?idX=<?php echo $fila['idproducto']?>">Modificar</a></td>
     </tr>
     <?php endforeach;?>
     </table>

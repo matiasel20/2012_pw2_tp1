@@ -3,7 +3,6 @@
 include("../conectar.php");
 extract($_POST);
 session_start();
-$_SESSION['identifikador']=$id;
 
 $pdo=conectar();
 
@@ -12,8 +11,16 @@ $pdo=conectar();
     $sql="select * from cliente where idcliente = :identificador"; 
      $stmt = $pdo->prepare($sql);
       //$stmt->setFetchMode(PDO::FETCH_ASSOC);
-       $stmt->bindParam(':identificador', $_SESSION['identifikador']);
+     
 
+       if(isset ($_GET['idX'])){
+           $stmt->bindParam(':identificador', $_GET['idX']);
+           $_SESSION['identifikador']=$_GET['idX'];
+           unset ($_GET['idX']);
+       }else{
+           $_SESSION['identifikador']=$id;
+           $stmt->bindParam(':identificador',$_SESSION['identifikador']);
+       }  
        
        $stmt->execute();
               $results = $stmt->fetchAll();
@@ -34,34 +41,34 @@ $pdo=conectar();
  };
 ?>
                
-                <h1>modificar datos</h1>
+        <h1>Modificar Usuario</h1>
         <form action="midificUltimo.php" method="post">
 
            
 
             
-            user<br>
+            User<br>
             <input type="text" name="user" value="<?php echo $fila['user'];?>"><br>
-            nombre<br>
+            Nombre<br>
             <input type="text" name="nombre" value="<?php echo $fila['nombre'];?>"><br>
-            apellido<br>
+            Apellido<br>
             <input type="text" name="apellido" value="<?php echo $fila['apellido'];?>"><br>
             
-                        dni<br>
+                        Dni<br>
             <input type="text" name="dni" value="<?php echo $fila['dni'];?>"><br>
-                        fechanac<br>
+                        Fechanac<br>
             <input type="text" name="fechanac" value="<?php echo $fila['fechanac'];?>"><br>
-                        direccion<br>
+                        Direccion<br>
             <input type="text" name="direccion" value="<?php echo $fila['direccion'];?>"><br>
-                        localidad<br>
+                        Localidad<br>
             <input type="text" name="localidad" value="<?php echo $fila['localidad'];?> "><br>
-                        telcel<br>
+                        Telcel<br>
             <input type="text" name="telcel" value="<?php echo $fila['telcel'];?>"><br>
-                        email<br>
+                        Email<br>
             <input type="text" name="email" value="<?php echo $fila['email'];?>"><br>
-                        password<br>
+                        Password<br>
             <input type="password" name="password" value="<?php echo $fila['password'];?>"><br>
             
-           <input type="submit" value="modificarrr" >
+           <input type="submit" value="Modificar" >
         </form>
         <br>
