@@ -81,7 +81,7 @@
       
 <?php //include("funciones/compra/formularios.php");
 include("funciones/compra/sacacategoria.php"); 
-
+include("funciones/compra/muestratablaACC.php"); 
 
 ?>
 
@@ -95,46 +95,30 @@ include("funciones/compra/sacacategoria.php");
     
 		<h3><a href="#"><?php echo $fila['nombre'];?></a></h3>
 		<div class="divTabla">
+<?php 	$results2=	mostrarACC($fila['idcategoria']);?>
+<div style="font-size:12px; color: white; overflow: auto; width: 300px; height: 100px">
+    <table border="1">
+        <tr>
+          <td>Codigo</td><td>Descripcion</td><td>Modelo</td><td>Tamanio</td><td>Precio</td>
+          <td>Stock</td>
+        </tr>
+        <?php foreach($results2 as $fila):?>
+            <tr>
+              <td><?php echo $fila['codigo'];?></td>
+              <td><?php echo $fila['descripcion'];?></td>
+              <td><?php echo $fila['modelo'];?></td>
+              <td><?php echo $fila['tamanio'];?></td>
+              <td><?php echo $fila['precio'];?></td>
+              <td><?php echo $fila['stock'];?></td>
 
-			<table class="torneo">
-				<tr>
-					<th>Modelo A</th>
-					<th>Modelo B</th>
-					<th>Modelo C</th>
-					
-				</tr>
-				<tr>
-					<td>
-					<img class="productocalzado" src="compras/botin.jpg" alt="Click to see enlarged image"/>
-					</td>
-					<td>
-					<img class="productocalzado" src="compras/botin2.jpg" alt="Click to see enlarged image"/>
-					</td>
-					<td>
-					<img class="productocalzado" src="compras/botin3.jpg" alt="Click to see enlarged image"/>
-					</td>
-					
-				</tr>
-				<tr>
-					<th>Modelo D</th>
-					<th>Modelo E</th>
-					<th>Modelo F</th>
-					
-				</tr>
-				<tr>
-					<td>
-					<img class="productocalzado" src="compras/botin4.jpg" alt="Click to see enlarged image"/>
-					</td>
-					<td>
-					<img class="productocalzado" src="compras/botin5.jpg" alt="Click to see enlarged image"/>
-					</td>
-					<td>
-					<img class="productocalzado" src="compras/botin6.jpg" alt="Click to see enlarged image"/>
-					</td>
-					
-				</tr>
 
-			</table>
+              <td><input type="button" value="X" style="font-size: 8px"></td>
+              <td><input type="button" value="M" style="font-size: 8px"></td>
+            </tr>
+        <?php endforeach;?>
+    </table>
+ </div>
+
 	</div>
     <?php endforeach;?>
     

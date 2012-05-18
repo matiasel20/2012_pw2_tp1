@@ -10,7 +10,7 @@ function sacacat(){
 $pdo=conectar();
  try {
     $pdo->beginTransaction();
-    $sql="select nombre from categoria"; 
+    $sql="select * from categoria"; 
      $stmt = $pdo->prepare($sql);
       //$stmt->setFetchMode(PDO::FETCH_ASSOC);
  
