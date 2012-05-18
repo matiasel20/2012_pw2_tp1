@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 18-05-2012 a las 12:19:05
+-- Tiempo de generación: 18-05-2012 a las 17:40:07
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -49,7 +49,17 @@ CREATE TABLE IF NOT EXISTS `categoria` (
   `idcategoria` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
   PRIMARY KEY (`idcategoria`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Volcado de datos para la tabla `categoria`
+--
+
+INSERT INTO `categoria` (`idcategoria`, `nombre`) VALUES
+(1, 'calzados'),
+(2, 'pelotas'),
+(3, 'pantalones'),
+(4, 'medias');
 
 -- --------------------------------------------------------
 
@@ -154,7 +164,16 @@ CREATE TABLE IF NOT EXISTS `producto` (
   `categoriaid` int(10) unsigned NOT NULL,
   PRIMARY KEY (`idproducto`),
   KEY `fk_producto_categoria1` (`categoriaid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`idproducto`, `codigo`, `descripcion`, `modelo`, `tamanio`, `precio`, `stock`, `categoriaid`) VALUES
+(1, 1234, 'pelota adidas', 'hajsgd45', 'grande 5', 190.66, '3', 2),
+(2, 543543, 'pantaloncillos cortos', 'playa de verano 45', 'mediano', 30.00, '12', 3),
+(3, 45689, 'botines nike', '999', '42', 299.99, '5', 1);
 
 -- --------------------------------------------------------
 
