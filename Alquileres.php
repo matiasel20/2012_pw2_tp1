@@ -106,10 +106,9 @@
             include "funciones/alquiler/consultalogin_1.php";
             include "funciones/conectar.php";            
             
-            
 
             setlocale(LC_ALL,"es_ES@euro","es_ES","esp");
-            echo strftime("hoy es %A %d de %B de %Y");
+            //echo strftime("hoy es %A %d de %B de %Y");
             
             
             $pdo=conectar();
@@ -159,6 +158,15 @@
 
                     <div id="tabs-1">
                             <img class="cancha" src="alquileres/cancha5 1.jpg" alt="pp"/>
+                            
+                            <?php if(!isset($_SESSION['usuario'])):?>          
+                                <label style="color:#8D0202;">usuario no identificado</label><br>
+                             <?php else:?>
+                                    <br><a href="funciones/alquiler/mostrarReservas.php" >ver reservas realizadas</a><br>
+                            <?php endif;?>        
+                           
+                                    
+                                
                             <?php for($i=0;$i<8;$i++):?>         
                             <?php 
                             $j=$i+$num_dia-1;
