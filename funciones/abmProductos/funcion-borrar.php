@@ -9,7 +9,7 @@ $pdo=conectar();
         $sql="delete from producto where idproducto = :identificador"; 
          $stmt = $pdo->prepare($sql);
           //$stmt->setFetchMode(PDO::FETCH_ASSOC);
-           $stmt->bindParam(':identificador', $id);
+           $stmt->bindParam(':identificador', $idX);
 
 
            $stmt->execute();

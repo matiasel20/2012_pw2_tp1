@@ -41,33 +41,6 @@ $pdo=conectar();
 
 ?>
 
-
-<?php
-
-function borrarp ($id){
-    try {
-        $pdo->beginTransaction();
-        $sql="delete from producto where idproducto = :identificador"; 
-         $stmt = $pdo->prepare($sql);
-          //$stmt->setFetchMode(PDO::FETCH_ASSOC);
-           $stmt->bindParam(':identificador', $id);
-
-
-           $stmt->execute();
-
-
-
-      $pdo->commit();  //se guardaría todo “definitivamente”
-
-      header('Location: ../../administracion.php');
-    } catch (PDOException $e) {
-      $pdo->rollBack();  //ante cualquier excepción, revierte todo
-       echo 'La operación ha fallado: ' . $e->getMessage();
-    }
-}
-
-?>
-
 <div style="font-size:12px; color: white; overflow: auto; width: 300px; height: 100px">
     <table border="1" >
     <tr>
@@ -85,9 +58,11 @@ function borrarp ($id){
       <td><?php echo $fila['precio'];?></td>
       <td><?php echo $fila['stock'];?></td>
       <td><?php echo $fila['cat'];?></td>
-      <td><input type="button" value="X" style="font-size: 8px">
-          <a href="funciones/abmProductos/funcion-borrar.php?id=<?php echo $i?>"></a>
+      <td><input type="button" value="X" style="font-size: 8px" 
+                 onclick="<a href="funciones/abmProductos/borraP.php?idX=<?php echo $fila['idproducto']?>"></a>">
+          
       </td>
+      <td></td>
       <td><input type="button" value="M" style="font-size: 8px"></td>
     </tr>
     <?php endforeach;?>
