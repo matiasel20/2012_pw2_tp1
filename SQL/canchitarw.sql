@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 17-05-2012 a las 13:20:54
+-- Tiempo de generación: 18-05-2012 a las 12:19:05
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -37,7 +37,19 @@ CREATE TABLE IF NOT EXISTS `alquiler` (
   PRIMARY KEY (`idalquiler`),
   UNIQUE KEY `cancha_UNIQUE` (`cancha`,`fecha`),
   KEY `fk_alquiler_cliente1` (`clienteid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categoria`
+--
+
+CREATE TABLE IF NOT EXISTS `categoria` (
+  `idcategoria` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(45) NOT NULL,
+  PRIMARY KEY (`idcategoria`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -61,7 +73,17 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   PRIMARY KEY (`idcliente`),
   UNIQUE KEY `user_UNIQUE` (`user`),
   KEY `fk_Cliente_Equipo1` (`equipoid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='\n	\n					' AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='\n	\n					' AUTO_INCREMENT=5 ;
+
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`idcliente`, `user`, `nombre`, `apellido`, `dni`, `fechanac`, `direccion`, `localidad`, `telcel`, `email`, `password`, `equipoid`) VALUES
+(1, 'sebamach', 'sebastian', 'machado', '30000000', '0000-00-00', 'antartida', '1', '154', 'seba_rw84@hotmail.com', '202cb962ac59075b964b07152d234b70', NULL),
+(2, 'matiasel20', 'matias', 'gensana', '6666666666', '0000-00-00', 'playa', '1', '155', 'yensana@hotmail.com', '202cb962ac59075b964b07152d234b70', NULL),
+(3, 'kirardigo', 'gabriel', 'figueroa', '666', '0000-00-00', 'nose', '1', '155', 'kirardigo@yahoo.com.ar', '202cb962ac59075b964b07152d234b70', NULL),
+(4, 'aspirozd', 'dario', 'aspiroz', '4444444444', '0000-00-00', 'conesa', '1', '1555445454', 'aspirozd@hotmail.com', '202cb962ac59075b964b07152d234b70', NULL);
 
 -- --------------------------------------------------------
 
@@ -73,8 +95,8 @@ CREATE TABLE IF NOT EXISTS `compra` (
   `idcompra` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `cantidad` int(10) unsigned NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `clienteid` int(10) unsigned NOT NULL,
-  `productoid` int(10) unsigned NOT NULL,
+  `clienteid` int(10) unsigned DEFAULT NULL,
+  `productoid` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`idcompra`),
   KEY `fk_Compra_Cliente1` (`clienteid`),
   KEY `fk_compra_producto1` (`productoid`)
@@ -129,7 +151,9 @@ CREATE TABLE IF NOT EXISTS `producto` (
   `tamanio` varchar(45) DEFAULT NULL,
   `precio` decimal(5,2) unsigned NOT NULL,
   `stock` varchar(45) NOT NULL,
-  PRIMARY KEY (`idproducto`)
+  `categoriaid` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`idproducto`),
+  KEY `fk_producto_categoria1` (`categoriaid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -175,6 +199,12 @@ ALTER TABLE `compra`
 --
 ALTER TABLE `equipo`
   ADD CONSTRAINT `fk_Equipo_Torneo1` FOREIGN KEY (`torneoid`) REFERENCES `torneo` (`idtorneo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `producto`
+--
+ALTER TABLE `producto`
+  ADD CONSTRAINT `fk_producto_categoria1` FOREIGN KEY (`categoriaid`) REFERENCES `categoria` (`idcategoria`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
