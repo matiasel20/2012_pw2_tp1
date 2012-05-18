@@ -6,7 +6,10 @@ $pdo=conectar();
 
  try {
     $pdo->beginTransaction();
-    $sql="select * from producto"; 
+    $sql="select idproducto, codigo, descripcion,
+     modelo, tamanio, precio, stock, categoria.nombre as cat
+     from producto join 
+     categoria on (producto.categoriaid) = (categoria.idcategoria)"; 
      $stmt = $pdo->prepare($sql);
       $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
@@ -69,7 +72,7 @@ function borrarp ($id){
     <table border="1" >
     <tr>
         <td>Id</td><td>codigo</td><td>descripcion</td><td>modelo</td><td>tamanio</td>
-      <td>precio</td><td>stock</td>
+      <td>precio</td><td>stock</td><td>categoria</td>
     </tr>
     <?php foreach($results as $fila):?>
     <tr>
@@ -81,6 +84,7 @@ function borrarp ($id){
       <td><?php echo $fila['tamanio'];?></td>
       <td><?php echo $fila['precio'];?></td>
       <td><?php echo $fila['stock'];?></td>
+      <td><?php echo $fila['cat'];?></td>
       <td><input type="button" value="X" style="font-size: 8px">
           <a href="funciones/abmProductos/funcion-borrar.php?id=<?php echo $i?>"></a>
       </td>

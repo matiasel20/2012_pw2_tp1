@@ -53,7 +53,8 @@ $pdo=conectar();
                         stock<br>
             <input type="text" name="stock" value=<?php echo $fila['stock'];?>><br>
             
-
+                        categoria<br>
+            <input type="text" name="categoriaid" value=<?php echo $fila['categoriaid'];?>><br>
             
            <input type="submit" value="modificarrr" >
         </form>

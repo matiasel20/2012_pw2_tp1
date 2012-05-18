@@ -34,6 +34,9 @@ include("funciones/abmProductos/mostrarTablaP.php")
  
                         Stock<br>
             <input type="text" name="stock" ><br>
+
+                        Categoria<br>
+            <input type="text" name="categoriaid" ><br>
             
             <input type="submit" value="ingresar">
         </form>
