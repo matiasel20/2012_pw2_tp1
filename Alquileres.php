@@ -136,7 +136,6 @@
                 $semana[$dia]=$horarios;
             }        
             
-            $canchas = array($semana,$semana,$semana);         
             
 
             
