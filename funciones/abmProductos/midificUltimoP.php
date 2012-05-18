@@ -11,8 +11,8 @@ $pdo=conectar();
  try {
     $pdo->beginTransaction();
     $sql="update producto set codigo= :codigo, descripcion= :descripcion,
-      modelo= :modelo, tamanio= :tamanio, precio= :precio, stock= :stock
-      where idproducto= :id"; 
+      modelo= :modelo, tamanio= :tamanio, precio= :precio, stock=:stock,
+      categoriaid= :categoriaid where idproducto= :id"; 
      $stmt = $pdo->prepare($sql);
       //$stmt->setFetchMode(PDO::FETCH_ASSOC);
             $stmt->bindParam(':id', $_SESSION['identifikador']);
@@ -23,7 +23,7 @@ $pdo=conectar();
        $stmt->bindParam(':tamanio',$tamanio);
        $stmt->bindParam(':precio',$precio);
        $stmt->bindParam(':stock',$stock);
-       
+       $stmt->bindParam(':categoriaid',$categoriaid);  
        $stmt->execute();
 
        
