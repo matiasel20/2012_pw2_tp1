@@ -17,22 +17,22 @@ include("funciones/abmProductos/mostrarTablaP.php")
     
     <font size="5"><u>Insertar</u></font>
         <form action="funciones/abmProductos/insertarP.php" method="post">
-            codigo<br>
+            Codigo<br>
             <input type="text" name="codigo" ><br>
 
                         Descripcion<br>
             <input type="text" name="descripcion" ><br>
             
-                        modelo<br>
+                        Modelo<br>
             <input type="text" name="modelo" ><br>
             
-                        tamanio<br>
+                        Tamanio<br>
             <input type="text" name="tamanio" ><br>
             
-                        precio<br>
+                        Precio<br>
             <input type="text" name="precio" ><br>
  
-                        stock<br>
+                        Stock<br>
             <input type="text" name="stock" ><br>
             
             <input type="submit" value="ingresar">

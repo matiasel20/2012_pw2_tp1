@@ -25,6 +25,9 @@ $pdo=conectar();
    echo 'La operación ha fallado: ' . $e->getMessage();
 }
 
+
+
+
 ?>
 
 

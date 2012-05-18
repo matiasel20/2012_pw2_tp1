@@ -37,6 +37,34 @@ $pdo=conectar();
  };*/
 
 ?>
+
+
+<?php
+
+function borrarp ($id){
+    try {
+        $pdo->beginTransaction();
+        $sql="delete from producto where idproducto = :identificador"; 
+         $stmt = $pdo->prepare($sql);
+          //$stmt->setFetchMode(PDO::FETCH_ASSOC);
+           $stmt->bindParam(':identificador', $id);
+
+
+           $stmt->execute();
+
+
+
+      $pdo->commit();  //se guardaría todo “definitivamente”
+
+      header('Location: ../../administracion.php');
+    } catch (PDOException $e) {
+      $pdo->rollBack();  //ante cualquier excepción, revierte todo
+       echo 'La operación ha fallado: ' . $e->getMessage();
+    }
+}
+
+?>
+
 <div style="font-size:12px; color: white; overflow: auto; width: 300px; height: 100px">
     <table border="1" >
     <tr>
@@ -46,14 +74,15 @@ $pdo=conectar();
     <?php foreach($results as $fila):?>
     <tr>
       <td><?php echo $fila['idproducto'];?></td>
+      <?php $aux = $fila['idproducto'] ?>
       <td><?php echo $fila['codigo'];?></td>
       <td><?php echo $fila['descripcion'];?></td>
       <td><?php echo $fila['modelo'];?></td>
       <td><?php echo $fila['tamanio'];?></td>
       <td><?php echo $fila['precio'];?></td>
       <td><?php echo $fila['stock'];?></td>
-      <td><input type="button" value="X" style="font-size: 8px"></td>
-      <td><input type="button" value="M" style="font-size: 8px"></td>
+      <td><input type="button" value="X" onclick="" style="font-size: 8px"></td>
+      <td><input type="button" value="M" onclick="" style="font-size: 8px"></td>
     </tr>
     <?php endforeach;?>
     </table>
