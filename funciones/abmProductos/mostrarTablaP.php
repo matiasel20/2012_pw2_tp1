@@ -41,7 +41,7 @@ $pdo=conectar();
 
 ?>
 
-<div style="font-size:12px; color: white; overflow: auto; width: 300px; height: 100px">
+<div style="font-size:12px; color: white; overflow: auto; width: 600px; height: 100px">
     <table border="1" >
     <tr>
         <td>Id</td><td>codigo</td><td>descripcion</td><td>modelo</td><td>tamanio</td>
@@ -58,7 +58,9 @@ $pdo=conectar();
       <td><?php echo $fila['precio'];?></td>
       <td><?php echo $fila['stock'];?></td>
       <td><?php echo $fila['cat'];?></td>
-      <td><a href="funciones/abmProductos/borraP.php?idX=<?php echo $fila['idproducto']?>">Borrar</a></td>
+      <td>
+          <a href="funciones/abmProductos/borraP.php?idX=<?php echo $fila['idproducto']?>">Borrar</a>
+      </td>
       <td><a href="funciones/abmProductos/modificaP.php?idX=<?php echo $fila['idproducto']?>">Modificar</a></td>
     </tr>
     <?php endforeach;?>

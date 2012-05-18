@@ -36,7 +36,7 @@ $pdo=conectar();
                 $fila['pass']);
  };*/
 ?>
- <div style="font-size:12px; color: white; overflow: auto; width: 300px; height: 100px">
+ <div style="font-size:12px; color: white; overflow: auto; width: 800px; height: 100px">
     <table border="1">
         <tr>
           <td>Id</td><td>user</td><td>Nombre</td><td>Apellido</td><td>Dni</td>
