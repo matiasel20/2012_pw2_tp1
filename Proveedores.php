@@ -105,7 +105,7 @@
 </div>
 
 <div class="pie">
-<p>Diseñado por Aspiroz, Figueroa, Gensana, Machado</p> <a href="Administracion.php" >Administracion</a>
+<p>Diseñado por Aspiroz, Figueroa, Gensana, Machado</p> 
 </div> 
 
 </body>
