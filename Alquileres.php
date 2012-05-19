@@ -5,7 +5,7 @@
 
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
+<?php session_start();?>
 
 
 <head>
@@ -69,14 +69,27 @@
 		</div>
 <div class="principal">
 	<div class="left">
+		<div style="text-align: center">
+			<?php if (isset($_SESSION['usuario'])):?>
+				<label sytle="text-align: right"><?php echo $_SESSION['usuario']?> <a href="funciones/logout.php" >cerrar sesion</a></label>
+            <?php elseif (isset($_SESSION['empleado'])):?>
+				<label sytle="text-align: right"><?php echo $_SESSION['empleado']?> <a href="funciones/logout.php" >cerrar sesion</a></label>
+			<?php endif;?>
+        </div> 
 		<div class="menu">
 			<a id="format" class="link" href="Index.php">Inicio</a>
-			<a id="format" class="link" href="LogIn.php">Entrar</a>
+			<?php if(!isset($_SESSION['usuario']) and !isset($_SESSION['empleado'])):?>
+				<a id="format" class="link" href="LogIn.php">Entrar</a>
+			<?php endif;?>			
 			<a id="format" class="link" href="Registro.php">Registrarse</a>	
 			<a id="format" class="link" href="Torneos.php">Torneos</a>			
 			<a id="format" class="link" href="Compras.php">Compras</a>
 			<a id="format" class="Pisado" href="Alquileres.php">Alquileres</a>
 			<a id="format" class="link" href="Proveedores.php">Proveedores</a>
+			<?php if(isset($_SESSION['empleado'])):?>
+				<a id="format" class="link" href="Administracion.php">Administracion</a>
+			<?php endif;?>		
+			
 		</div>
       
     </div>
@@ -86,7 +99,6 @@
          <?php ?>
          <?php
          
-            session_start();
             
             if(!isset($_SESSION['usuario'])){            
                 echo"usted no esta logueado!.<br>";            
@@ -351,11 +363,7 @@
 		
     	
     <div class="right">
-               <div style="text-align: right">
-                        <?php if (isset($_SESSION['usuario'])):?>
-                            <label sytle="text-align: right"><?php echo $_SESSION['usuario']?> <a href="funciones/logout.php" >cerrar sesion</a></label>
-                        <?php endif?>      
-               </div>
+
 		<div class="contenido0" style="text-align: right">
 			<FORM action="http://www.google.com/search" method="get" >
 					<INPUT TYPE="text" name="q" size="26" maxlength="255" value="" />

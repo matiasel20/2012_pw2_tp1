@@ -70,15 +70,28 @@ float: none; color: #f7fa19; font-weight:bold; padding-left: .5em; vertical-alig
 		</div>
 <div class="principal">
 	<div class="left">
+		<div style="text-align: center">
+			<?php if (isset($_SESSION['usuario'])):?>
+				<label sytle="text-align: right"><?php echo $_SESSION['usuario']?> <a href="funciones/logout.php" >cerrar sesion</a></label>
+            <?php elseif (isset($_SESSION['empleado'])):?>
+				<label sytle="text-align: right"><?php echo $_SESSION['empleado']?> <a href="funciones/logout.php" >cerrar sesion</a></label>
+			<?php endif;?>
+        </div> 
+
 
 		<div class="menu">
 			<a id="format" class="link" href="Index.php">Inicio</a>
-			<a id="format" class="link" href="LogIn.php">Entrar</a>
+			<?php if(!isset($_SESSION['usuario']) and !isset($_SESSION['empleado'])):?>
+				<a id="format" class="link" href="LogIn.php">Entrar</a>
+			<?php endif;?>
 			<a id="format" class="link" href="Registro.php">Registrarse</a>	
 			<a id="format" class="link" href="Torneos.php">Torneos</a>			
 			<a id="format" class="link" href="Compras.php">Compras</a>
 			<a id="format" class="link" href="Alquileres.php">Alquileres</a>
 			<a id="format" class="link" href="Proveedores.php">Proveedores</a>
+			<?php if(isset($_SESSION['empleado'])):?>
+				<a id="format" class="link" href="Administracion.php">Administracion</a>
+			<?php endif;?>	
 		</div>
       
          </div>

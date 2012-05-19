@@ -2,6 +2,7 @@
 
 require_once ("../conectar.php");
 include("consultalogin.php");
+include("consultaloginempleado.php");
 
 
 session_start();
@@ -10,10 +11,12 @@ $pdo=conectar();
 if ($_POST['usuario'] !="" AND $_POST['pass'] !=""){    
    
     
-    if(!consultalogin($pdo))
-        $_SESSION['error']="login incorrecto";
+    if(consultalogin($pdo))
+        $_SESSION['usuario']=$_POST['usuario'];
+	elseif (consultaloginempleado($pdo))
+		$_SESSION['empleado']=$_POST['usuario'];
     else
-        $_SESSION['usuario']=$_POST['usuario'];    
+        $_SESSION['error']="login incorrecto";;    
 
 }
 else {

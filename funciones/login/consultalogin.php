@@ -29,7 +29,7 @@ function consultalogin($pdo) {
                return 0;
     } 
     
-    if (!$result[0]){
+    if (!$result){
         return 0;
     }
     return 1;

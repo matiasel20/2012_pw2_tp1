@@ -75,6 +75,10 @@
             echo "Bienvenido: ".$_SESSION['usuario'];
             echo " <a href=funciones/logout.php>cerrar sesion</a>";
         }
+		elseif (isset($_SESSION['empleado'])){
+            echo "Bienvenido empleado: ".$_SESSION['empleado'];
+            echo " <a href=funciones/logout.php>cerrar sesion</a>";
+        }
         else {
         ?>
 		<div class="contenido1" style="text-align: left">
