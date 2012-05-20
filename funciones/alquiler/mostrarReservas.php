@@ -51,11 +51,11 @@ function consultoreservas($pdo) {
 ?>
 
 
-
+<body background="top_bg.jpg">
 
 <?php if ($results=consultoreservas($pdo)):?>
       <h1>reservas</h1><br>
-      <table border="1">
+      <table border="1" style="color:white">
         <tr>
           <td>IdAlquiler</td><td>cancha</td><td>fecha</td><td>indumentaria</td><td>duchas</td>
           <td>confiteria</td>
@@ -65,9 +65,25 @@ function consultoreservas($pdo) {
               <td><?php echo $fila['idalquiler'];?></td>
               <td><?php echo $fila['cancha'];?></td>
               <td><?php echo $fila['fecha'];?></td>
-              <td><?php echo $fila['indumentaria'];?></td>
-              <td><?php echo $fila['duchas'];?></td>
-              <td><?php echo $fila['confiteria'];?></td>              
+			  
+			  <?php if ($fila['indumentaria']):?>
+				<td align="center"><img src="ok.png"/></td>
+			  <?php else:?>
+			    <td></td>
+			  <?php endif;?>
+			  
+			  <?php if ($fila['duchas']):?>
+				<td align="center"><img src="ok.png"/></td>
+			  <?php else:?>
+			    <td></td>
+			  <?php endif;?>
+			  
+			  <?php if ($fila['confiteria']):?>
+				<td align="center"><img src="ok.png"/></td>
+			  <?php else:?>
+			    <td></td>
+			  <?php endif;?>
+			              
             </tr>
          <?php endforeach;?>
 <?php else:?>
@@ -75,6 +91,8 @@ function consultoreservas($pdo) {
          
 <?php endif;?>
 
+
+</body>
 
 
 
