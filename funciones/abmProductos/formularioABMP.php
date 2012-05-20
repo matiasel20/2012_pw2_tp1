@@ -1,11 +1,12 @@
 <?php
 
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-include("funciones/abmProductos/mostrarTablaP.php")
+
+include("funciones/abmProductos/mostrarTablaP.php");
+include("funciones/compra/sacacategoria.php");
+
+$cats=sacacat();
+
 ?>
 
 
@@ -35,8 +36,14 @@ include("funciones/abmProductos/mostrarTablaP.php")
                         Stock<br>
             <input type="text" name="stock" ><br>
 
-                        Categoria<br>
-            <input type="text" name="categoriaid" ><br>
+            <label class= "option" for="categoriaid">Categoria:</label>
+               <select id="categoriaid"  name="categoriaid" class="required">
+                       <option >Seleccione...</option>
+                          <?php foreach($cats as $fila):?>
+                       <option value=<?php echo $fila['idcategoria'];?>><?php echo $fila['nombre'];?></option>
+
+                          <?php endforeach; ?>
+               </select><br>
             
             <input type="submit" value="ingresar">
         </form>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 include("funciones/conectar.php");
 
 //session_start();
@@ -9,7 +9,8 @@ $pdo=conectar();
     $sql="select idproducto, codigo, descripcion,
      modelo, tamanio, precio, stock, categoria.nombre as cat
      from producto join 
-     categoria on (producto.categoriaid) = (categoria.idcategoria)"; 
+     categoria on (producto.categoriaid) = (categoria.idcategoria)
+	order by idproducto"; 
      $stmt = $pdo->prepare($sql);
       $stmt->setFetchMode(PDO::FETCH_ASSOC);
 

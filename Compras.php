@@ -56,37 +56,24 @@
 			<div class="titulo"><h1>La Canchita de Rawson</h1>
 			</div>
 			
-			<div class="calendario" id="calendario" style="font-size:0.5em;">
-			</div>
+
 		</div>
 <div class="principal">
-	<div class="left">
-		<div style="text-align: center">
-			<?php if (isset($_SESSION['usuario'])):?>
-				<label sytle="text-align: right"><?php echo $_SESSION['usuario']?> <a href="funciones/logout.php" >cerrar sesion</a></label>
-            <?php elseif (isset($_SESSION['empleado'])):?>
-				<label sytle="text-align: right"><?php echo $_SESSION['empleado']?> <a href="funciones/logout.php" >cerrar sesion</a></label>
-			<?php endif;?>
-        </div> 
+	<div class="left" >
 
 		<div class="menu">
 			<a id="format" class="link" href="Index.php">Inicio</a>
-			<?php if(!isset($_SESSION['usuario']) and !isset($_SESSION['empleado'])):?>
-				<a id="format" class="link" href="LogIn.php">Entrar</a>
-			<?php endif;?>
+			<a id="format" class="link" href="LogIn.php">Entrar</a>
 			<a id="format" class="link" href="Registro.php">Registrarse</a>	
 			<a id="format" class="link" href="Torneos.php">Torneos</a>			
 			<a id="format" class="Pisado" href="Compras.php">Compras</a>
 			<a id="format" class="link" href="Alquileres.php">Alquileres</a>
 			<a id="format" class="link" href="Proveedores.php">Proveedores</a>
-			<?php if(isset($_SESSION['empleado'])):?>
-				<a id="format" class="link" href="Administracion.php">Administracion</a>
-			<?php endif;?>	
 		</div>
       
     </div>
 	
-	<div class="center">
+	<div class="center" style=" width: 750px;  ">
 
 		
 		<div class="contenido1">
@@ -108,7 +95,7 @@ include("funciones/compra/muestratablaACC.php");
 		<h3><a href="#"><?php echo $fila['nombre'];?></a></h3>
 		<div class="divTabla">
 <?php 	$results2=	mostrarACC($fila['idcategoria']);?>
-<div style="font-size:12px; color: white; overflow: auto; width: 300px; height: 100px">
+<div style="font-size:12px; color: white; overflow: auto; width: 450px; height: 200px">
     <table border="1">
         <tr>
           <td>Codigo</td><td>Descripcion</td><td>Modelo</td><td>Tamanio</td><td>Precio</td>
@@ -124,7 +111,8 @@ include("funciones/compra/muestratablaACC.php");
               <td><?php echo $fila['stock'];?></td>
 
 
-              <td><input type="button" value="BUY" style="font-size: 8px"></td>
+              <td><a href="funciones/compra/alta.php?prod=
+              <?php echo $fila['idproducto'];?>"> Comprar </a></td>
 
             </tr>
         <?php endforeach;?>
@@ -143,40 +131,7 @@ include("funciones/compra/muestratablaACC.php");
 		
     </div>
 		
-  <div class="right">
-   
-    
-		<div class="contenido0" style="text-align: right">
-			<FORM action="http://www.google.com/search" method="get" >
-				
-				<TABLE style=" border :none ; height:0">
-					<tr border='none' >
-					<INPUT TYPE=text name=q size=28 maxlength=255 value="" >
-					<INPUT TYPE=hidden name=hl value=es>
-					<INPUT type=submit name=btnG VALUE="Búsqueda Google">
-					</td></tr>
-				</TABLE>
-			</FORM>
-			</center>
-		</div>
-		
-		<div class="contenido3">
-			<a href="http://msn.foxsports.com/fse/argentina" >
-			<img class="propaganda" src="img/propaganda1.jpg" alt="Click to see enlarged image"/>
-			</a>
-			
-			<a href="http://www.tycsports.com/contenidos/home.php" >
-			<img class="propaganda" src="img/propaganda2.jpg" alt="Click to see enlarged image"/>
-			</a>
-			
-			<a href="http://www.ole.com.ar/" >
-			<img class="propaganda" src="img/propaganda3.jpg" alt="Click to see enlarged image"/>
-			</a>
 
-			<br/>
-		</div>
-  
-</div>
 <div class="pie">
 <p>Diseñado por Aspiroz, Figueroa, Gensana, Machado</p> 
 </div> 

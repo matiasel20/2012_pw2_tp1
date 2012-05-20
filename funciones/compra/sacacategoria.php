@@ -1,8 +1,8 @@
 <?php
-
+	require_once("funciones/conectar.php");
 
 function sacacat(){
-	include("funciones/conectar.php");
+
 
 //session_start();
 
