@@ -110,9 +110,11 @@ include("funciones/compra/muestratablaACC.php");
               <td><?php echo $fila['precio'];?></td>
               <td><?php echo $fila['stock'];?></td>
 
-
+			  <?php if(isset($_SESSION['usuario'])):?>
               <td><a href="funciones/compra/alta.php?prod=
               <?php echo $fila['idproducto'];?>"> Comprar </a></td>
+			  <?php endif;?>
+			  
 
             </tr>
         <?php endforeach;?>

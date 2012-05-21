@@ -1,10 +1,12 @@
 <?php
 include("../conectar.php");
+include("../alquiler/consultauser.php");
 extract($_GET);
-//session_start();
-$clienteid=2;
+session_start();
+
 $cantidad=1;
 $pdo=conectar();
+$clienteid=(int)consultaUser($pdo,$_SESSION['usuario']);
 $pdo2=conectar();
 $fecha2=sprintf('%s',date("Y/m/d H:i:s"));
 
