@@ -33,7 +33,7 @@
 -->
 	
 	<form id="dialog-confirm" title="Sugerencia" method="post" action="LogIn.html">
-		Seguro q no desea solicitar algun servicio?</br>
+		Seguro q no desea solicitar algun servicio? </br>
 		<input type="submit" value="Si" onclick="$( '#dialog-confirm' ).dialog( 'close' );return true;"/>
 		<input type="submit" value="No" onclick="$( '#dialog-confirm' ).dialog( 'close' );return false;"/>
 	</form>
@@ -168,193 +168,24 @@
                     </ul>
 
                     <div id="tabs-1">
-                            <img class="cancha" src="alquileres/cancha5 1.jpg" alt="pp"/>
-                            
-                            <?php if(!isset($_SESSION['usuario'])):?>          
-                                <label style="color:#8D0202;">usuario no identificado</label><br>
-                             <?php else:?>
-                                    <br><a href="funciones/alquiler/mostrarReservas.php" >ver reservas realizadas</a><br>
-                            <?php endif;?>        
-                           
-                                    
-                                
-                            <?php for($i=0;$i<8;$i++):?>         
-                            <?php 
-                            $j=$i+$num_dia-1;
-                            //echo $nombre_dias[$j%7]." ".calcularfecha($i);
-                            $horario=$semana[$nombre_dias[$j%7]];
-
-                            ?>
-                            <label style="color:yellow;margin-left:8em"><?php echo $nombre_dias[$j%7]." ".calcularfecha($i);?></label>
-                            <table class="alq">
-                                <form name="formulario" method="post" action="funciones/alquiler/reserva_1.php">
-                                <input type="hidden" value="<?php echo calcularfecha($i)?>" name="fecha"/>
-
-                                <tr>
-                                    <td class="alq">
-                                            <fieldset>
-                                                <label class= "option" for="localidad" style="font-size:23px">Horario:<br><br></label>
-                                                <select name="turno" class="required">
-                                                    <?php foreach($horario as $clave => $hora):?>
-                                                        <?php if ($j!=$num_dia-1 || $num_hora<$hora) :?>                        
-                                                            <?php if(!consultalogin($pdo,$hora,$i,1)):?>
-                                                                <option value='<?php echo '1'.'/'.$hora?>'> <?php echo $hora.':00 hs'?> </option>                          
-                                                            <?php endif;?>
-                                                        <?php endif;?>
-                                                    <?php endforeach;?>
-                                                </select>
-                                            </fieldset>																
-                                    </td>		
-
-                                    <td class="alq">
-                                        <fieldset>
-                                            Servicios Adicionales</br><div style="width: auto; float: left">
-                                            <label class="opciones" for="op1">
-                                                <input class="opciones" type="checkbox" name="s1" id="op1" value="1"/>
-                                            </label>
-                                            </br>
-                                            <label class="opciones" for="op2">
-                                                <input class="alq" type="checkbox" name="s2" id="op2" value="2"/>
-                                            </label>
-                                            </br>
-                                            <label class="opciones" for="op3">
-                                                <input class="alq" type="checkbox" name="s3" id="op3" value="3"/>
-                                            </label>
-                                            </div>
-                                            <div style="text-align:left">-Indumentaria</div>
-                                            <div style="text-align:left">-Ducha</div>
-                                            <div style="text-align:left">-Confiteria</div>
-                                    </fieldset>
-                                    </td>				
-                                </tr>
-                                 <td colspan="2" class="alq">					
-                                    <input class="submit" type="submit" value="Alquilar" onclick="return validar();" />
-                                 </td>
-
-                                </form>
-                               </table>
-                            <?php endfor;?>  
+                            <img class="cancha" src="img/cancha5 1.jpg" alt="pp"/>
+                           <?  $c=1; 
+                               include 'alquiler_tab.php'?>
                     </div>
 
                 <div id="tabs-2">
-                            <img class="cancha" src="alquileres/cancha5 2.jpg" alt="pp"/>
-                            <?php for($i=0;$i<8;$i++):?>         
-                            <?php 
-                            $j=$i+$num_dia-1;
-                            //echo $nombre_dias[$j%7]." ".calcularfecha($i);
-                            $horario=$semana[$nombre_dias[$j%7]];
-
-                            ?>
-                            <label style="color:yellow;margin-left:8em"><?php echo $nombre_dias[$j%7]." ".calcularfecha($i);?></label>
-                            <table class="alq">
-                                <form name="formulario" method="post" action="funciones/alquiler/reserva_1.php">
-                                <input type="hidden" value="<?php echo calcularfecha($i)?>" name="fecha"/>
-
-                                <tr>
-                                    <td class="alq">
-                                            <fieldset>
-                                                <label class= "option" for="localidad" style="font-size:23px">Horario:</br></br></label>
-                                                <select name="turno" class="required">
-                                                    <?php foreach($horario as $clave => $hora):?>
-                                                        <?php if ($j!=$num_dia-1 || $num_hora<$hora) :?>                        
-                                                            <?php if(!consultalogin($pdo,$hora,$i,2)):?>
-                                                                <option value='<?php echo '2'.'/'.$hora?>'> <?php echo $hora.':00 hs'?> </option>                          
-                                                            <?php endif;?>
-                                                        <?php endif;?>
-                                                    <?php endforeach;?>
-                                                </select>
-                                            </fieldset>																
-                                    </td>		
-
-                                    <td class="alq">
-                                        <fieldset>
-                                            Servicios Adicionales</br><div style="width: auto; float: left">
-                                            <label class="opciones" for="op1">
-                                                <input class="opciones" type="checkbox" name="s1" id="op1" value="1"/>
-                                            </label>
-                                            </br>
-                                            <label class="opciones" for="op2">
-                                                <input class="alq" type="checkbox" name="s2" id="op2" value="2"/>
-                                            </label>
-                                            </br>
-                                            <label class="opciones" for="op3">
-                                                <input class="alq" type="checkbox" name="s3" id="op3" value="3"/>
-                                            </label>
-                                            </div>
-                                            <div style="text-align:left">-Indumentaria</div>
-                                            <div style="text-align:left">-Ducha</div>
-                                            <div style="text-align:left">-Confiteria</div>
-                                    </fieldset>
-                                    </td>				
-                                </tr>
-                                 <td colspan="2" class="alq">					
-                                    <input class="submit" type="submit" value="Alquilar" onclick="return validar();" />
-                                 </td>
-
-                                </form>
-                               </table>
-                            <?php endfor;?>  
+                            <img class="cancha" src="img/cancha5 2.jpg" alt="pp"/>
+                            
+                            <? $c=2;
+                               include 'alquiler_tab.php'?>
                     </div>
 
 
                  <div id="tabs-3">
-                            <img class="cancha" src="alquileres/cancha8.jpg" alt="pp"/>
-                            <?php for($i=0;$i<8;$i++):?>         
-                            <?php 
-                            $j=$i+$num_dia-1;
-                            //echo $nombre_dias[$j%7]." ".calcularfecha($i);
-                            $horario=$semana[$nombre_dias[$j%7]];
-
-                            ?>
-                            <label style="color:yellow;margin-left:8em"><?php echo $nombre_dias[$j%7]." ".calcularfecha($i);?></label>
-                            <table class="alq">
-                                <form name="formulario" method="post" action="funciones/alquiler/reserva_1.php">
-                                <input type="hidden" value="<?php echo calcularfecha($i)?>" name="fecha"/>
-
-                                <tr>
-                                    <td class="alq">
-                                            <fieldset>
-                                                <label class= "option" for="localidad" style="font-size:23px">Horario:</br></br></label>
-                                                <select name="turno" class="required">
-                                                    <?php foreach($horario as $clave => $hora):?>
-                                                        <?php if ($j!=$num_dia-1 || $num_hora<$hora) :?>                        
-                                                            <?php if(!consultalogin($pdo,$hora,$i,3)):?>
-                                                                <option value='<?php echo '3'.'/'.$hora?>'> <?php echo $hora.':00 hs'?> </option>                          
-                                                            <?php endif;?>
-                                                        <?php endif;?>
-                                                    <?php endforeach;?>
-                                                </select>
-                                            </fieldset>																
-                                    </td>		
-
-                                    <td class="alq">
-                                        <fieldset>
-                                            Servicios Adicionales</br><div style="width: auto; float: left">
-                                            <label class="opciones" for="op1">
-                                                <input class="opciones" type="checkbox" name="s1" id="op1" value="1"/>
-                                            </label>
-                                            </br>
-                                            <label class="opciones" for="op2">
-                                                <input class="alq" type="checkbox" name="s2" id="op2" value="2"/>
-                                            </label>
-                                            </br>
-                                            <label class="opciones" for="op3">
-                                                <input class="alq" type="checkbox" name="s3" id="op3" value="3"/>
-                                            </label>
-                                            </div>
-                                            <div style="text-align:left">-Indumentaria</div>
-                                            <div style="text-align:left">-Ducha</div>
-                                            <div style="text-align:left">-Confiteria</div>
-                                    </fieldset>
-                                    </td>				
-                                </tr>
-                                 <td colspan="2" class="alq">					
-                                    <input class="submit" type="submit" value="Alquilar" onclick="return validar();" />
-                                 </td>
-
-                                </form>
-                               </table>
-                            <?php endfor;?>  
+                            <img class="cancha" src="img/cancha8.jpg" alt="pp"/>
+                            
+                            <? $c=3;
+                               include 'alquiler_tab.php'?>
                     </div>
 
            </div>

@@ -11,17 +11,22 @@ $pdo=conectar();
 if ($_POST['usuario'] !="" AND $_POST['pass'] !=""){    
    
     
-    if(consultalogin($pdo))
+    if(consultalogin($pdo)){
         $_SESSION['usuario']=$_POST['usuario'];
-	elseif (consultaloginempleado($pdo))
+        header("location:../../Index.php");
+    }elseif (consultaloginempleado($pdo)){
 		$_SESSION['empleado']=$_POST['usuario'];
-    else
-        $_SESSION['error']="login incorrecto";;    
-
+                header("location:../../Index.php");
+        }
+    else{
+        $_SESSION['error']="INFORMACION INCORRECTA";;    
+        header("location:../../LogIn.php");
+    }     
 }
 else {
     $_SESSION['reingrese']="ingrese los datos";
+    header("location:../../LogIn.php");
 }
-header("location:../../index.php");
+
 
 ?>
