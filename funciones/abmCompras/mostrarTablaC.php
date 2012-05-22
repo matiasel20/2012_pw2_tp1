@@ -23,7 +23,7 @@ $pdo=conectar();
      
   $pdo->commit();  //se guardaría todo “definitivamente”
   ?>
-    <p style="font-size:20px ; font-family: italic; color: white">Tabla de Clientes!</p>
+    <p style="font-size:20px ; font-family: italic; color: white">Tabla de Compras!</p>
   <?php
   //echo $nombre.$apellido.$password;
 } catch (PDOException $e) {
