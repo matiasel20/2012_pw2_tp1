@@ -19,10 +19,7 @@ $pdo=conectar();
        $results = $stmt->fetchAll();
    
      
-  $pdo->commit();  //se guardaría todo “definitivamente”
-  ?>
-    <p style="font-size:20px ; font-family: italic; color: white">Tabla de Productos!</p>
-  <?php
+  $pdo->commit();  //se guardaría todo “definitivamente”;
   //echo $nombre.$apellido.$password;
 } catch (PDOException $e) {
   $pdo->rollBack();  //ante cualquier excepción, revierte todo
@@ -41,29 +38,32 @@ $pdo=conectar();
  };*/
 
 ?>
-
-<div style="font-size:12px; color: white; overflow: auto; width: 600px; height: 100px">
-    <table border="1" >
-    <tr>
-        <td>Id</td><td>codigo</td><td>descripcion</td><td>modelo</td><td>tamanio</td>
-      <td>precio</td><td>stock</td><td>categoria</td>
-    </tr>
-    <?php foreach($results as $fila):?>
-    <tr>
-      <td><?php echo $fila['idproducto'];?></td>
-      <?php $i = $fila['idproducto'] ?>
-      <td><?php echo $fila['codigo'];?></td>
-      <td><?php echo $fila['descripcion'];?></td>
-      <td><?php echo $fila['modelo'];?></td>
-      <td><?php echo $fila['tamanio'];?></td>
-      <td><?php echo $fila['precio'];?></td>
-      <td><?php echo $fila['stock'];?></td>
-      <td><?php echo $fila['cat'];?></td>
-      <td>
-          <a href="funciones/abmProductos/borraP.php?idX=<?php echo $fila['idproducto']?>">Borrar</a>
-      </td>
-      <td><a href="funciones/abmProductos/modificaP.php?idX=<?php echo $fila['idproducto']?>">Modificar</a></td>
-    </tr>
-    <?php endforeach;?>
-    </table>
-</div>
+<fieldset>
+    <legend><h2>Tabla Productos!</h2></legend>
+    <div style="font-size:12px; color: white; overflow: auto; width: 600px; height: 100px">
+        <table border="1" >
+        <tr>
+            <td>Id</td><td>codigo</td><td>descripcion</td><td>modelo</td><td>tamanio</td>
+          <td>precio</td><td>stock</td><td>categoria</td>
+        </tr>
+        <?php foreach($results as $fila):?>
+        <tr>
+          <td><?php echo $fila['idproducto'];?></td>
+          <?php $i = $fila['idproducto'] ?>
+          <td><?php echo $fila['codigo'];?></td>
+          <td><?php echo $fila['descripcion'];?></td>
+          <td><?php echo $fila['modelo'];?></td>
+          <td><?php echo $fila['tamanio'];?></td>
+          <td><?php echo $fila['precio'];?></td>
+          <td><?php echo $fila['stock'];?></td>
+          <td><?php echo $fila['cat'];?></td>
+          <td>
+              <a href="funciones/abmProductos/borraP.php?idX=<?php echo $fila['idproducto']?>">Borrar</a>
+          </td>
+          <td><a href="funciones/abmProductos/modificaP.php?idX=<?php echo $fila['idproducto']?>">Modificar</a></td>
+        </tr>
+        <?php endforeach;?>
+        </table>
+    </div>
+</fieldset>
+</br>

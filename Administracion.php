@@ -104,7 +104,7 @@ float: none; color: #f7fa19; font-weight:bold; padding-left: .5em; vertical-alig
             <?php include "funciones/abmProductos/formularioABMP.php";
                   include "funciones/abmUsuarios/formularioABM.php";
                   include "funciones/abmCompras/mostrarTablaC.php"?>
-				  <br>
+				  </br>
 		
     </div>
 		
@@ -112,7 +112,7 @@ float: none; color: #f7fa19; font-weight:bold; padding-left: .5em; vertical-alig
  </div>
 
 <div class="pie">
-<p>Diseñado por Aspiroz, Figueroa, Gensana, Machado</p> Administracion
+<p>Diseñado por Aspiroz, Figueroa, Gensana, Machado</p>
 </div> 
 
 </body>
