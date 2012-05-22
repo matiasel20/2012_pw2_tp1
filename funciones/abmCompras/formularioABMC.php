@@ -2,8 +2,8 @@
 
 
 
-include("funciones/abmProductos/mostrarTablaP.php");
-include("funciones/compra/sacacategoria.php");
+include("funciones/abmCompras/mostrarTablaC.php");
+
 
 $cats=sacacat();
 
@@ -11,14 +11,14 @@ $cats=sacacat();
 
 
 
-
+</br>
 <table border="1" style="color: white" >
 <tr>
     <td valign="top" rowspan="2">
     
     <font size="5"><u>Insertar</u></font>
         <form action="funciones/abmProductos/insertarP.php" method="post">
-            Codigo<br>
+                        Codigo<br>
             <input type="text" name="codigo" ><br>
 
                         Descripcion<br>
