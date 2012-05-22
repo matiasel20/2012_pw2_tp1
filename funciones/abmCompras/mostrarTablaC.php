@@ -58,8 +58,7 @@ $pdo=conectar();
       <td><?php echo $fila['desc'];?></td>
       <td><?php echo $fila['modelo'];?></td>
       <td><?php echo $fila['t'];?></td>
-      <td><a href="funciones/abmCompra/borraC.php?idX=<?php echo $fila['idcompra']?>">Borrar</a></td>
-      <td><a href="funciones/abmCompra/modificaC.php?idX=<?php echo $fila['idcompra']?>">Modificar</a></td>
+ 
     </tr>
     <?php endforeach;?>
     </table>
