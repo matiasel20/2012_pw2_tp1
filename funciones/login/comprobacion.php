@@ -19,7 +19,7 @@ if ($_POST['usuario'] !="" AND $_POST['pass'] !=""){
                 header("location:../../Index.php");
         }
     else{
-        $_SESSION['error']="INFORMACION INCORRECTA";;    
+        $_SESSION['error']="Login incorrecto";;    
         header("location:../../LogIn.php");
     }     
 }

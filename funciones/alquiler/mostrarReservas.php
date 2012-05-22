@@ -51,14 +51,14 @@ function consultoreservas($pdo) {
 ?>
 
 
-<body background="top_bg.jpg">
-
+<body background="top_bg.jpg" vlink="#00FF00">
+    <a href="../../Alquileres.php">Atras<<</a>   
 <?php if ($results=consultoreservas($pdo)):?>
-      <h1>reservas</h1><br>
+      <h1>Reservas</h1><br>
       <table border="1" style="color:white">
         <tr>
-          <td>IdAlquiler</td><td>cancha</td><td>fecha</td><td>indumentaria</td><td>duchas</td>
-          <td>confiteria</td>
+          <td>IdAlquiler</td><td>Cancha</td><td>Fecha</td><td>Indumentaria</td><td>Duchas</td>
+          <td>Confiteria</td>
         </tr>
         <?php foreach($results as $fila):?>
             <tr>
@@ -86,8 +86,9 @@ function consultoreservas($pdo) {
 			              
             </tr>
          <?php endforeach;?>
-<?php else:?>
-            
+      </table>     
+ <?php else:?>
+      <h1>No se han realizado reservas</h1>     
          
 <?php endif;?>
 

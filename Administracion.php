@@ -90,7 +90,7 @@ float: none; color: #f7fa19; font-weight:bold; padding-left: .5em; vertical-alig
 			<a id="format" class="link" href="Alquileres.php">Alquileres</a>
 			<a id="format" class="link" href="Proveedores.php">Proveedores</a>
 			<?php if(isset($_SESSION['empleado'])):?>
-				<a id="format" class="link" href="Administracion.php">Administracion</a>
+				<a id="format" class="Pisado" href="Administracion.php">Administracion</a>
 			<?php endif;?>	
 		</div>
       
