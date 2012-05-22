@@ -34,7 +34,7 @@ $pdo=conectar();
  };*/
 ?>
  <fieldset>
-    <legend><h2>Tabla Compras!</h2></legend>
+    <legend><h2>Tabla Usuario!</h2></legend>
      <div style="font-size:12px; color: white; overflow: auto; width: 800px; height: 100px">
         <table border="1">
             <tr>
