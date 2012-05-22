@@ -12,7 +12,7 @@ $pdo=conectar();
      cliente on (compra.clienteid) = (cliente.idcliente) 
      join 
      producto on (compra.productoid) = (producto.idproducto)
-	order by clienteid"; 
+	order by idcompra"; 
      $stmt = $pdo->prepare($sql);
       $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
@@ -47,13 +47,15 @@ $pdo=conectar();
 <div style="font-size:12px; color: white; overflow: auto; width: 600px; height: 100px">
     <table border="1" >
     <tr>
-        <td>Cliente</td><td>Compra</td><td>Fecha</td><td>Descripcion</td><td>Modelo</td>
+        <td>Compra</td><td>Cliente</td><td>Fecha</td><td>Descripcion</td><td>Modelo</td>
       <td>Tamanio</td>
     </tr>
     <?php foreach($results as $fila):?>
-    <tr>
+    <tr> 
+	
+	  <td><?php echo $fila['idcompra'] ?></td>
       <td><?php echo $fila['user'];?></td>
-      <td><?php echo $fila['idcompra'] ?></td>
+     
       <td><?php echo $fila['fecha'];?></td>
       <td><?php echo $fila['desc'];?></td>
       <td><?php echo $fila['modelo'];?></td>
