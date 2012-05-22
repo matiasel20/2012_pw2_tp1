@@ -6,7 +6,8 @@ session_start();
 
 $cantidad=1;
 $pdo=conectar();
-$clienteid=(int)consultaUser($pdo,$_SESSION['usuario']);
+$clienteid=consultaUser($pdo,$_SESSION['usuario']);
+var_dump($clienteid);
 $pdo2=conectar();
 $fecha2=sprintf('%s',date("Y/m/d H:i:s"));
 

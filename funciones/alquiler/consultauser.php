@@ -32,7 +32,7 @@ function consultaUser($pdo,$user) {
     if (!$result)
         return 0;
     else
-        return $result[0];
+        return $result[0]['idcliente'];
     
    
 }

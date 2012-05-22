@@ -76,7 +76,7 @@ $pdo=conectar();
         $stmt->bindParam(':ind',$indumentaria);
         $stmt->bindParam(':ducha',$ducha);
         $stmt->bindParam(':conf',$confiteria);
-        $stmt->bindParam(':cliente',$iduser['idcliente']);
+        $stmt->bindParam(':cliente',$iduser);
 
         //ejecutamos la consulta
         $stmt->execute();

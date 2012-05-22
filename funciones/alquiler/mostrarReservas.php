@@ -26,7 +26,7 @@ function consultoreservas($pdo) {
         $stmt->setFetchMode(PDO::FETCH_ASSOC);//podria ser..
 
         //sutituimos lso parametros con los valores reales
-        $stmt->bindParam(':usuario',$idbusq['idcliente']);
+        $stmt->bindParam(':usuario',$idbusq);
 
         //ejecutamos la consulta
         $stmt->execute();
