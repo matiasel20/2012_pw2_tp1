@@ -8,6 +8,7 @@
 <?php session_start();?>
 
 
+
 <head>
 
 	<title>Alquileres</title>
@@ -28,26 +29,7 @@
 		#format {  margin-top: 10px; width:100%; font-size:20px;}		
 	</style>
 
-<!--
-**************************Aca se hace un cuadro para la alerta(javascrit-jquery)******************************		
--->
-	
-	<form id="dialog-confirm" title="Sugerencia" method="post" action="LogIn.html">
-		Seguro q no desea solicitar algun servicio? </br>
-		<input type="submit" value="Si" onclick="$( '#dialog-confirm' ).dialog( 'close' );return true;"/>
-		<input type="submit" value="No" onclick="$( '#dialog-confirm' ).dialog( 'close' );return false;"/>
-	</form>
-	
-	
-	<div id="alerta" title="Error">
-		</br>
-		Seleccione horario
-		
-	</div>
 
-<!--
-***************************************************************************************************************
--->
 	
 	<meta charset="utf-8"/>
 </head>
@@ -55,6 +37,20 @@
 
 
 <body>
+
+<?php
+            if (isset($_SESSION['errorAlq'])) {
+                echo "<script>alert(\"horario no disponible\")</script>";
+                unset($_SESSION['errorAlq']);
+            }
+			
+			if (isset($_SESSION['reservaok'])) {
+                echo "<script>alert(\"su reserva fue realizada\")</script>";
+                unset($_SESSION['reservaok']);
+            }
+			
+			
+?>
 	
 		<div class="logo">
 				<div class="pelota">
@@ -96,32 +92,11 @@
 	
 	<div class="center">
          
-         <?php ?>
-         <?php
          
-            
-            if(!isset($_SESSION['usuario'])){            
-                echo"usted no esta logueado!.<br>";            
-            }
-            
-            if (isset($_SESSION['errorAlq'])) {
-                echo "<script>alert(\"horario no disponible\")</script>";
-                unset($_SESSION['errorAlq']);
-            }
-            
-            if (isset($_SESSION['reservaok'])) {
-                echo "<script>alert(\"su reserva fue realizada\")</script>";
-                unset($_SESSION['reservaok']);
-            }
-            
-        
+         <?php
+		 
             include "funciones/alquiler/consultalogin_1.php";
-            include "funciones/conectar.php";            
-            
-
-            setlocale(LC_ALL,"es_ES@euro","es_ES","esp");
-            //echo strftime("hoy es %A %d de %B de %Y");
-            
+            include "funciones/conectar.php";          
             
             $pdo=conectar();
 
@@ -146,15 +121,12 @@
                     $horarios[]=$i;
                 }
                 $semana[$dia]=$horarios;
-            }        
-            
-            
-
-            
+            }            
                     
         ?>
             
         <?php 
+			//tomo dia y hora actuales
             $num_dia=date('N');
             $num_hora=date('H');           
         ?>   
