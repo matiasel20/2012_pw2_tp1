@@ -47,9 +47,9 @@ include("funciones/abmUsuarios/mostrarTabla.php")
         </td>
 <td valign="top">     
     <font size="5"><u>Eliminar</u></font>
-        <form action="funciones/abmUsuarios/borra.php" method="post">
+        <form id="formulario" action="funciones/abmUsuarios/borra.php" method="post" class="formulario">
             ID<br>
-            <input type="text" name="id"><br>
+            <input type="text" name="id" id="localidad" class="required"><br>
             
            <input type="submit" value="borrar">
         </form>
@@ -59,9 +59,9 @@ include("funciones/abmUsuarios/mostrarTabla.php")
 <tr>
     <td valign="top">
         <font size="5"><u>Modificar</u></font>
-            <form action="funciones/abmUsuarios/modifica.php" method="post">
+            <form id="formulario" action="funciones/abmUsuarios/modifica.php" method="post" class="formulario">
                 ID<br>
-                <input type="text" name="id"><br>
+                <input type="text" name="id" id="localidad" class="required"><br>
 
                <input type="submit" value="modifica">
             </form>

@@ -42,6 +42,6 @@ $pdo=conectar();
   $pdo->rollBack();  //ante cualquier excepción, revierte todo
    echo 'La operación ha fallado: ' . $e->getMessage();
 }
-header('Location: ../../administracion.php');
+header('Location: ../../Administracion.php');
 ?>
 

@@ -23,7 +23,7 @@ $pdo=conectar();
      
   $pdo->commit();  //se guardaría todo “definitivamente”
 
-  header('Location: ../../administracion.php');
+  header('Location: ../../Administracion.php');
 } catch (PDOException $e) {
   $pdo->rollBack();  //ante cualquier excepción, revierte todo
    echo 'La operación ha fallado: ' . $e->getMessage();
