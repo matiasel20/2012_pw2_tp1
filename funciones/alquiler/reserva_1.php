@@ -89,7 +89,7 @@ $pdo=conectar();
                $_SESSION['errorAlq']=true;
     }  
     
-header("location:../../alquileres.php");
+header("location:../../Alquileres.php");
     
 
 
