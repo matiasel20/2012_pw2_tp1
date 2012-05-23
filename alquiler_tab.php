@@ -25,7 +25,7 @@
                                                 <select name="turno" class="required">
                                                     <?php foreach($horario as $clave => $hora):?>
                                                         <?php if ($j!=$num_dia-1 || $num_hora<$hora) :?>                        
-                                                            <?php if(!consultalogin($pdo,$hora,$i,1)):?>
+                                                            <?php if(!consultalogin($pdo,$hora,$i,$c)):?>
                                                                 <option value='<?php echo $c.'/'.$hora?>'> <?php echo $hora.':00 hs'?> </option>                          
                                                             <?php endif;?>
                                                         <?php endif;?>

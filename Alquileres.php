@@ -173,7 +173,7 @@
                                include 'alquiler_tab.php'?>
                     </div>
 
-                <div id="tabs-2">
+                    <div id="tabs-2">
                             <img class="cancha" src="img/cancha5 2.jpg" alt="pp"/>
                             
                             <? $c=2;
@@ -181,7 +181,7 @@
                     </div>
 
 
-                 <div id="tabs-3">
+                    <div id="tabs-3">
                             <img class="cancha" src="img/cancha8.jpg" alt="pp"/>
                             
                             <? $c=3;
