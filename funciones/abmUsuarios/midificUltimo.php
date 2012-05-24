@@ -7,7 +7,19 @@ session_start();
 
 
 $pdo=conectar();
-
+$stamp = strtotime($fechanac);
+if( ( !empty($user) && !empty($nombre) && !empty($apellido) &&
+    !empty($dni) && !empty($fechanac) && !empty($direccion) &&
+    !empty($localidad) && !empty($telcel) && !empty($email) &&
+    !empty($password))
+    &&
+    (
+    is_string($user) && is_string($nombre) && is_string($apellido) &&
+    is_string($dni) && checkdate(date('m', $stamp), date('d', $stamp), date('Y', $stamp)) && is_string($direccion) &&
+    is_string($localidad) && is_string($telcel) && is_string($email) &&
+    is_string($password))
+	
+){
  try {
     $pdo->beginTransaction();
 
@@ -43,5 +55,8 @@ $pdo=conectar();
    echo 'La operación ha fallado: ' . $e->getMessage();
 }
 header('Location: ../../Administracion.php');
+
+}else{
+	echo "ingresaste algo mal";}
 ?>
 

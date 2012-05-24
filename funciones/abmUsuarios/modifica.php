@@ -5,11 +5,16 @@ extract($_POST);
 session_start();
 
 $pdo=conectar();
-if( ( !empty($id)  )
+if( ( ( !empty($id)  )
     &&
     (
     is_numeric($id) 
 	)
+	) || (( !empty($_GET['idX'])  )
+    &&
+    (
+    is_numeric($_GET['idX']) 
+	))
 ){
  try {
     $pdo->beginTransaction();

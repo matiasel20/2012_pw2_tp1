@@ -8,6 +8,17 @@ session_start();
 
 $pdo=conectar();
 
+if( ( !empty($codigo) && !empty($descripcion) && !empty($modelo) &&
+    !empty($tamanio) && !empty($precio) && !empty($stock) &&
+    !empty($categoriaid) )
+    
+
+){
+if     (
+    is_numeric($codigo) && is_string($descripcion) && is_string($modelo)
+     && is_string($tamanio) && is_numeric($precio) && is_string($stock)
+     && is_numeric($categoriaid) 
+	){
  try {
     $pdo->beginTransaction();
     $sql="update producto set codigo= :codigo, descripcion= :descripcion,
@@ -37,5 +48,11 @@ $pdo=conectar();
    echo 'La operación ha fallado: ' . $e->getMessage();
 }
 header('Location: ../../Administracion.php');
+
+}else{ echo "error, en tipo de dato no valido";}
+
+}else{
+	echo "error, un campo esta vacio";
+	}
 ?>
 
