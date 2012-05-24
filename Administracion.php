@@ -103,7 +103,10 @@ float: none; color: #f7fa19; font-weight:bold; padding-left: .5em; vertical-alig
     <div class="center" style="overflow: visible;">
             <?php include "funciones/abmProductos/formularioABMP.php";
                   include "funciones/abmUsuarios/formularioABM.php";
-                  include "funciones/abmCompras/mostrarTablaC.php"?>
+                  include "funciones/abmCompras/mostrarTablaC.php";
+				  include "funciones/abmAlquileres/mostrarTablaA.php";
+				  ?>
+				  
 				  </br>
 		
     </div>
