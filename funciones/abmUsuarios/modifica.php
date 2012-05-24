@@ -83,6 +83,11 @@ if( ( ( !empty($id)  )
            <input type="submit" value="Modificar" >
         </form>
         <br>
-<?php }else{echo "no se encontro id";} }else{
+<?php }else{echo "no se encontro id";
+   	$_SESSION['errormodificar']=true;
+	header('Location: ../../Administracion.php');
+} }else{
 	echo "error, ingresaste algo mal";
+	   	$_SESSION['errormodificar']=true;
+	header('Location: ../../Administracion.php');
 	} ?>
