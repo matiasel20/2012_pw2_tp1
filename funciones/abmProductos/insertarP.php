@@ -1,7 +1,7 @@
 <?php
 include("../conectar.php");
 
-//session_start();
+session_start();
 $pdo=conectar();
 extract($_POST);
 
@@ -41,12 +41,16 @@ if     (
 } catch (PDOException $e) {
   $pdo->rollBack();  //ante cualquier excepción, revierte todo
    echo 'La operación ha fallado: ' . $e->getMessage();
+   $_SESSION['errorinsertar']=true;
+   header('Location: ../../Administracion.php');
 
 }
 }else{ echo "error, en tipo de dato no valido";}
 
 }else{
 	echo "error, un campo esta vacio";
+	$_SESSION['errorinsertar']=true;
+   header('Location: ../../Administracion.php');
 	}
 
 ?>

@@ -68,8 +68,14 @@ float: none; color: #f7fa19; font-weight:bold; padding-left: .5em; vertical-alig
 				
 				if(isset($_SESSION['errormodificar'])) {
 					echo "<script>alert(\"no se puede modificar\")</script>";
-					unset($_SESSION['errormodificar']);
+					unset($_SESSION['errormodificar']);				
 				}
+				
+				if(isset($_SESSION['errorinsertar'])) {
+					echo "<script>alert(\"no se puede insertar\")</script>";
+					unset($_SESSION['errorinsertar']);				
+				}
+				
 		?>
 		
 		<div class="logo">
