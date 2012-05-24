@@ -5,7 +5,12 @@ extract($_POST);
 session_start();
 
 $pdo=conectar();
-
+if( ( !empty($id)  )
+    &&
+    (
+    is_numeric($id) 
+	)
+){
  try {
     $pdo->beginTransaction();
     $sql="select * from producto where idproducto = :identificador"; 
@@ -37,6 +42,9 @@ $pdo=conectar();
  {
 
  };
+ if ( !empty($fila['idproducto'])  ){
+ 
+
 ?>
                
                 <h1>Modificar Producto</h1>
@@ -64,3 +72,7 @@ $pdo=conectar();
            <input type="submit" value="Modificar" >
         </form>
         </br>
+
+<?php }else{echo "no se encontro id";} }else{
+	echo "error, ingresaste algo mal";
+	} ?>

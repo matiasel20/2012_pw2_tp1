@@ -4,7 +4,15 @@ include("../conectar.php");
 extract($_POST);
 //session_start();
 $pdo=conectar();
-echo 'entre a borrar';
+
+if( ( !empty($id)  )
+    &&
+    (
+    is_numeric($id) 
+	)
+){
+
+
  try {
      
     $pdo->beginTransaction();
@@ -33,7 +41,9 @@ echo 'entre a borrar';
 }
 
 
-
+}else{
+	echo "error, ingresaste algo mal";
+	}
 
 ?>
 

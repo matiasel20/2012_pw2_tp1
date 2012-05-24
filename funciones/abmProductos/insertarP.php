@@ -1,8 +1,21 @@
 <?php
 include("../conectar.php");
-extract($_POST);
+
 //session_start();
 $pdo=conectar();
+extract($_POST);
+
+if( ( !empty($codigo) && !empty($descripcion) && !empty($modelo) &&
+    !empty($tamanio) && !empty($precio) && !empty($stock) &&
+    !empty($categoriaid) )
+    &&
+    (
+    is_numeric($codigo) && is_string($descripcion) && is_string($modelo) &&
+    is_string($tamanio) && is_float($precio) && is_string($stock) &&
+    is_numeric($categoriaid) 
+	)
+){
+
 
 
  try {
@@ -30,5 +43,8 @@ $pdo=conectar();
    echo 'La operación ha fallado: ' . $e->getMessage();
 
 }
+}else{
+	echo "error, ingresaste algo mal";
+	}
 
 ?>
