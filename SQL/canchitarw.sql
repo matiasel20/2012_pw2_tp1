@@ -15,6 +15,9 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
 
+
+CREATE DATABASE IF NOT EXISTS canchitarw;
+USE canchitarw;
 --
 -- Base de datos: `canchitarw`
 --
