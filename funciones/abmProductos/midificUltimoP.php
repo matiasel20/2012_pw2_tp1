@@ -46,6 +46,8 @@ if     (
 } catch (PDOException $e) {
   $pdo->rollBack();  //ante cualquier excepción, revierte todo
    echo 'La operación ha fallado: ' . $e->getMessage();
+   	$_SESSION['errormodificar']=true;
+	header('Location: ../../Administracion.php');
 }
 header('Location: ../../Administracion.php');
 
@@ -53,6 +55,8 @@ header('Location: ../../Administracion.php');
 
 }else{
 	echo "error, un campo esta vacio";
+	$_SESSION['errormodificar']=true;
+	header('Location: ../../Administracion.php');
 	}
 ?>
 

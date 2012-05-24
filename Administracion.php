@@ -65,6 +65,11 @@ float: none; color: #f7fa19; font-weight:bold; padding-left: .5em; vertical-alig
 					echo "<script>alert(\"no se puede borrar\")</script>";
 					unset($_SESSION['errorborrar']);
 				}
+				
+				if(isset($_SESSION['errormodificar'])) {
+					echo "<script>alert(\"no se puede modificar\")</script>";
+					unset($_SESSION['errormodificar']);
+				}
 		?>
 		
 		<div class="logo">

@@ -53,10 +53,15 @@ if( ( !empty($user) && !empty($nombre) && !empty($apellido) &&
 } catch (PDOException $e) {
   $pdo->rollBack();  //ante cualquier excepción, revierte todo
    echo 'La operación ha fallado: ' . $e->getMessage();
+   $_SESSION['errormodificar']=true;
+   header('Location: ../../Administracion.php');
 }
 header('Location: ../../Administracion.php');
 
 }else{
-	echo "ingresaste algo mal";}
+	echo "ingresaste algo mal";
+	$_SESSION['errormodificar']=true;
+	header('Location: ../../Administracion.php');
+	}
 ?>
 
