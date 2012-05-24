@@ -12,7 +12,7 @@ include("funciones/abmUsuarios/mostrarTabla.php")
 <tr>
     <td valign="top" rowspan="2">
     <font size="5"><u>Insertar</u></font>
-        <form id="formulario" action="funciones/abmUsuarios/insertar.php" method="post"class="formulario">
+        <form  id="formulario" action="funciones/abmUsuarios/insertar.php" method="post" >
             User<br>
             <input type="text" name="user" id="user" minlength="4" class="required"/><br>
             Nombre<br>
@@ -47,11 +47,11 @@ include("funciones/abmUsuarios/mostrarTabla.php")
         </td>
 <td valign="top">     
     <font size="5"><u>Eliminar</u></font>
-        <form id="formulario" action="funciones/abmUsuarios/borra.php" method="post" class="formulario">
+        <form id="formulario1" action="funciones/abmUsuarios/borra.php" method="post" >
             ID<br>
-            <input type="text" name="id" id="localidad" class="required"><br>
+            <input type="text" name="id" id="user" class="required"><br>
             
-           <input type="submit" value="borrar">
+           <input type="submit" value="ingresar">
         </form>
         <br>
         
@@ -59,9 +59,9 @@ include("funciones/abmUsuarios/mostrarTabla.php")
 <tr>
     <td valign="top">
         <font size="5"><u>Modificar</u></font>
-            <form id="formulario" action="funciones/abmUsuarios/modifica.php" method="post" class="formulario">
+            <form id="formulario2" action="funciones/abmUsuarios/modifica.php" method="post" >
                 ID<br>
-                <input type="text" name="id" id="localidad" class="required"><br>
+                <input type="text" name="id" id="user" class="required"><br>
 
                <input type="submit" value="modifica">
             </form>

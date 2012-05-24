@@ -79,6 +79,12 @@ jQuery.validator.addMethod("lettersonly", function(value, element) {
 //-------------------------
 
 $().ready(function() {
+	$("#formulario1").validate({});
+		$("#formulario2").validate({});
+			$("#formulario3").validate({});
+		$("#formulario4").validate({});
+			$("#formulario5").validate({});
+		
 $("#formulario").validate({
 rules: {
 

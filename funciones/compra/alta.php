@@ -7,7 +7,7 @@ session_start();
 $cantidad=1;
 $pdo=conectar();
 $clienteid=consultaUser($pdo,$_SESSION['usuario']);
-var_dump($clienteid);
+//var_dump($clienteid);
 $pdo2=conectar();
 $fecha2=sprintf('%s',date("Y/m/d H:i:s"));
 
@@ -112,10 +112,11 @@ try {
 header('Location: ../../Compras.php');
 
 }else{
-  
-  echo "<h1>error, no hay mas stock</h1>";
-  
-  }
-?>
 
+ echo "<script>alert(\"No hay mas stock\")</script>";
+
+  }
+
+?>
+<a href="../../Compras.php">Atras</a>
 
