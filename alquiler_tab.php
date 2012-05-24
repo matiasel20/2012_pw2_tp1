@@ -1,15 +1,11 @@
  <?php if(!isset($_SESSION['usuario'])):?>          
-                                <label style="color:#8D0202">Usuario no identificado</label><br>
-                             <?php else:?>
-                                    <br><a href="funciones/alquiler/mostrarReservas.php" >ver reservas realizadas</a><br>
-                                    
-                           
-                                    
-                                
-                            <?php for($i=0;$i<8;$i++):?>         
+                            <label style="color:#8D0202">Usuario no identificado</label><br>
+ <?php else:?>
+							<br><a href="funciones/alquiler/mostrarReservas.php" >ver reservas realizadas</a><br>
+						    
+                            <?php for($i=0;$i<8;$i++)://a partir del dia de la fecha recorro los proximos 7 dias?>         
                             <?php 
-                            $j=$i+$num_dia-1;
-                            //echo $nombre_dias[$j%7]." ".calcularfecha($i);
+                            $j=$i+$num_dia-1;//indice para el dia de la semana correspondiente                            
                             $horario=$semana[$nombre_dias[$j%7]];
 
                             ?>
@@ -17,6 +13,7 @@
                             <table class="alq">
                                 <form name="formulario" method="post" action="funciones/alquiler/reserva_1.php">
                                 <input type="hidden" value="<?php echo calcularfecha($i)?>" name="fecha"/>
+								<input type="hidden" value="<?php echo $c?>" name="cancha"/>
 
                                 <tr>
                                     <td class="alq">
@@ -24,9 +21,9 @@
                                                 <label class= "option" for="localidad" style="font-size:23px">Horario:<br><br></label>
                                                 <select name="turno" class="required">
                                                     <?php foreach($horario as $clave => $hora):?>
-                                                        <?php if ($j!=$num_dia-1 || $num_hora<$hora) :?>                        
-                                                            <?php if(!consultalogin($pdo,$hora,$i,$c)):?>
-                                                                <option value='<?php echo $c.'/'.$hora?>'> <?php echo $hora.':00 hs'?> </option>                          
+                                                        <?php if ($j!=$num_dia-1 || $num_hora<$hora) ://dia de la fecha comprobar que hora sea mayor a la actual?>                        
+                                                            <?php if(!consultalogin($pdo,$hora,$i,$c))://consultar por el turno?>
+                                                                <option value='<?php echo $hora?>'> <?php echo $hora.':00 hs'?> </option>                          
                                                             <?php endif;?>
                                                         <?php endif;?>
                                                     <?php endforeach;?>
@@ -62,4 +59,4 @@
                                 </form>
                                </table>
                             <?php endfor;?>  
-                            <?php endif;?>
+<?php endif;?>
