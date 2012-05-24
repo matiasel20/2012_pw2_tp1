@@ -56,7 +56,7 @@ $cats=sacacat();
       <font size="5"><u>Eliminar</u></font>
         <form id="formulario4"action="funciones/abmProductos/borraP.php" method="post">
             ID<br>
-            <input type="text" name="id" class="required"><br>
+            <input type="text" name="id" class="required digits"><br>
             
            <input type="submit" value="borrar">
         </form>
@@ -67,7 +67,7 @@ $cats=sacacat();
     <font size="5"><u>Modificar</u></font> 
         <form id="formulario3" action="funciones/abmProductos/modificaP.php" method="post">
             ID<br>
-            <input type="text" name="id" class="required"><br>
+            <input type="text" name="id" class="required digits"><br>
             
            <input type="submit" value="modifica">
         </form>

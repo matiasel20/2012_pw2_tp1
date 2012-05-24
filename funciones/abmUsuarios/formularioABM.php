@@ -49,7 +49,7 @@ include("funciones/abmUsuarios/mostrarTabla.php")
     <font size="5"><u>Eliminar</u></font>
         <form id="formulario1" action="funciones/abmUsuarios/borra.php" method="post" >
             ID<br>
-            <input type="text" name="id" id="user" class="required"><br>
+            <input type="text" name="id" id="user" class="required digits"><br>
             
            <input type="submit" value="ingresar">
         </form>
@@ -61,7 +61,7 @@ include("funciones/abmUsuarios/mostrarTabla.php")
         <font size="5"><u>Modificar</u></font>
             <form id="formulario2" action="funciones/abmUsuarios/modifica.php" method="post" >
                 ID<br>
-                <input type="text" name="id" id="user" class="required"><br>
+                <input type="text" name="id" id="user" class="required digits"><br>
 
                <input type="submit" value="modifica">
             </form>

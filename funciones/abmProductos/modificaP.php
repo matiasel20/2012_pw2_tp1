@@ -57,24 +57,24 @@ if( ( ( !empty($id)  )
                 <h1>Modificar Producto</h1>
         <form action="midificUltimoP.php" method="post">
             Codigo</br>
-            <input type="text" name="codigo" value=<?php echo $fila['codigo'];?>></br>
+            <input type="text" name="codigo" value="<?php echo $fila['codigo'];?>"></br>
                         Descripcion<br>
-            <input type="text" name="descripcion" value=<?php echo $fila['descripcion'];?>></br>
+            <input type="text" name="descripcion" value="<?php echo $fila['descripcion'];?>"></br>
                       
                         Modelo<br>
-            <input type="text" name="modelo" value=<?php echo $fila['modelo'];?>></br>
+            <input type="text" name="modelo" value="<?php echo $fila['modelo'];?>"></br>
             
                         Tamanio<br>
-            <input type="text" name="tamanio" value=<?php echo $fila['tamanio'];?>></br>
+            <input type="text" name="tamanio" value="<?php echo $fila['tamanio'];?>"></br>
             
                         Precio<br>
-            <input type="text" name="precio" value=<?php echo $fila['precio'];?>></br>
+            <input type="text" name="precio" value="<?php echo $fila['precio'];?>"></br>
  
                         Stock<br>
-            <input type="text" name="stock" value=<?php echo $fila['stock'];?>></br>
+            <input type="text" name="stock" value="<?php echo $fila['stock'];?>"></br>
             
                         Categoria<br>
-            <input type="text" name="categoriaid" value=<?php echo $fila['categoriaid'];?>></br>
+            <input type="text" name="categoriaid" value="<?php echo $fila['categoriaid'];?>"></br>
             
            <input type="submit" value="Modificar" >
         </form>
