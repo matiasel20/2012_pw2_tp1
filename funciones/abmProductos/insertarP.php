@@ -45,7 +45,12 @@ if     (
    header('Location: ../../Administracion.php');
 
 }
-}else{ echo "error, en tipo de dato no valido";}
+}else{ 
+echo "error, en tipo de dato no valido";
+$_SESSION['errorinsertar']=true;
+header('Location: ../../Administracion.php');
+
+}
 
 }else{
 	echo "error, un campo esta vacio";
