@@ -9,6 +9,8 @@
 			<?php if($_SESSION['empleado']==null){
 				header("Location: error404.php");
 				}
+				
+				
 			
 			?>
 
@@ -58,6 +60,12 @@ float: none; color: #f7fa19; font-weight:bold; padding-left: .5em; vertical-alig
 
 
 <body>		
+		<?php
+		if(isset($_SESSION['errorborrar'])) {
+					echo "<script>alert(\"no se puede borrar\")</script>";
+					unset($_SESSION['errorborrar']);
+				}
+		?>
 		
 		<div class="logo">
 				<div class="pelota">

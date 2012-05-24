@@ -2,7 +2,7 @@
 
 include("../conectar.php");
 extract($_POST);
-//session_start();
+session_start();
 $pdo=conectar();
 if( ( ( !empty($id)  )
     &&
@@ -37,9 +37,13 @@ if( ( ( !empty($id)  )
 } catch (PDOException $e) {
   $pdo->rollBack();  //ante cualquier excepción, revierte todo
    echo 'La operación ha fallado: ' . $e->getMessage();
+   $_SESSION['errorborrar']=true;
+   header('Location: ../../Administracion.php');
 }
 }else{
 	echo "error, ingresaste algo mal";
+	$_SESSION['errorborrar']=true;
+	header('Location: ../../Administracion.php');
 	}
 ?>
 

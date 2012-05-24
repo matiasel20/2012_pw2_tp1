@@ -17,7 +17,7 @@ function consultoreservas($pdo) {
     
      try {
         
-        $sql = "SELECT idalquiler, cancha, fecha, indumentaria, duchas, confiteria FROM alquiler WHERE clienteid = :usuario";
+        $sql = "SELECT idalquiler, cancha, fecha, indumentaria, duchas, confiteria FROM alquiler WHERE clienteid = :usuario order by fecha";
 
         //preparamos un statement con el sql anterior
         $stmt = $pdo->prepare($sql);
