@@ -3,7 +3,18 @@ include("../conectar.php");
 extract($_POST);
 //session_start();
 $pdo=conectar();
-
+if( ( !empty($user) && !empty($nombre) && !empty($apellido) &&
+    !empty($dni) && !empty($fechanac) && !empty($direccion) &&
+    !empty($localidad) && !empty($telcel) && !empty($email) &&
+    !empty($password))
+    &&
+    (
+    is_string($user) && is_string($nombre) && is_string($apellido) &&
+    is_string($dni) && checkdate($fechanac) && is_string($direccion) &&
+    is_string($localidad) && is_string($telcel) && is_string($email) &&
+    is_string($password))
+	
+){
 
  try {
     $pdo->beginTransaction();
@@ -36,5 +47,8 @@ $pdo=conectar();
    echo 'La operación ha fallado: ' . $e->getMessage();
 
 }
+}else{
+	echo "error, ingresaste algo mal";
+	}
 
 ?>

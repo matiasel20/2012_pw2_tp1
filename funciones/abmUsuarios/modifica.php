@@ -5,7 +5,12 @@ extract($_POST);
 session_start();
 
 $pdo=conectar();
-
+if( ( !empty($id)  )
+    &&
+    (
+    is_numeric($id) 
+	)
+){
  try {
     $pdo->beginTransaction();
     $sql="select * from cliente where idcliente = :identificador"; 
@@ -39,6 +44,7 @@ $pdo=conectar();
  {
 
  };
+  if ( !empty($fila['idcliente'])  ){
 ?>
                
         <h1>Modificar Usuario</h1>
@@ -72,3 +78,6 @@ $pdo=conectar();
            <input type="submit" value="Modificar" >
         </form>
         <br>
+<?php }else{echo "no se encontro id";} }else{
+	echo "error, ingresaste algo mal";
+	} ?>
